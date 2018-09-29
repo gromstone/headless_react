@@ -15,12 +15,12 @@ const client = new ApolloClient({
 
 class App extends Component {
     render() {
-        
+
         return (
             <ApolloProvider client={client}>
                 <Layout/>
             </ApolloProvider>
-            
+
         );
     }
 }
