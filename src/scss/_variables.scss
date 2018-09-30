@@ -1,16 +1,67 @@
-$color__primary--light: #DD0000 !default;
-$color__primary: #C10000 !default;
-$color__primary--dark: #990000 !default;
+//devices
+$device--xs:                 0;
+$device--sm:                 34em; //540px
+$device--md:                 48em; //768px
+$device--lg:                 62em; //992px
+$device--xl:                 75em; //1200px
 
-$base__font-size: 15 !default;
-$base__line: 20 !default;
+//colors
+$color__primary:           #2891cb !default; //blue
+$color__secondary:         #ca6e29 !default; //orange
+$color__optional:          #276b53 !default; //green
+$color__default:           #444 !default;    //dark grey
+$color__warning:           #ffbb33 !default; //yellow
+$color__red:               #C10000 !default;
+$color__anchor:            #0275d8;
 
-$bgLighten-grey: lighten(#222, 10%);
+$color__info:              #33b5e5 !default;
+$color__grey--std:         #333 !default;
+$color__grey--bg:          #9d9d9d !default;
+$color__white:             #fff !default;
+$color__black:             #000 !default;
 
-$list__number-color: #FFF !default;
+$color__primary--light:    lighten($color__primary, 10%) !default;
+$color__secondary--light:  lighten($color__secondary, 10%) !default;
+$color__optional--light:   lighten($color__optional, 10%) !default;
+$color__red--light:        lighten($color__red, 10%) !default;
+$color__info--light:       lighten($color__info, 5%) !default;
+$color__bgGrey--light:     lighten($color__grey--bg, 5%) !default;
 
-$border__std: 1px solid #999;
+$color__red--dark:         darken($color__red, 10%) !default;
+$color__bgGrey--dark:      darker($color__grey--bg, 10%) !default;
 
-$input-height: 30px;
-$input-radius: 4px;
-$input-padding: 10px 12px;
+$color__danger:            $color__red--light;
+$color__error:             $color__red--dark;
+
+
+//Font settings
+$font-family--all:         'Amiko', Helvetica, Arial, Sans-Serif;
+$font-family--special:     'Alfa Slab One', "Helvetica Neue", Arial, Sans-Serif;
+$font-size__base:          16 !default;
+$line-height__base:        20 !default;
+
+$font--small:              .9rem !default;
+$font--large:              1.5rem !default;
+
+
+
+
+//transitions
+$transition__basic:        all .2s ease-in-out !default;
+$transition__hover:        all .45s ease-in-out !default;
+
+
+//shadow
+$shadow-std:               0 5px 11px rgba(0,0,0, .2), 0 4px 15px rgba(0,0,0, .19) !default;
+
+//border
+$border__std:              1px solid $color__bgGrey--light;
+$border__radius:           .125rem !default;
+$border__round:            10em !default;
+$border__circle:           50% !default;
+
+
+//input
+$input-height:             30px;
+$input-radius:             4px;
+$input-padding:            10px 12px;

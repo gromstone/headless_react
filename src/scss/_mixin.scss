@@ -1,19 +1,38 @@
-@mixin text($size, $line, $margin: 0, $family: $text__family-sans) {
-    font-size: calc-em($size);
-    line-height: ($line/$size);
-    font-family: $family;
-    margin-bottom: calc-em($margin, $size);
-}
+@mixin font-style( $ffSize:false, $ffFamily:false, $ffColor:flase , $ffWeight:false ){
+  @if $ffFamily == amiko {
+    font-family: $font-family--all;
+  } @else if $ffFamily == alfa {
+    font-family: $font-family--special;
+  }
+
+  @if $ffSize { font-size: calc-em($ffSize); }
+  @if $ffColor { color: $ffColor; }
+  @if $ffWeight { font-weight: $ffWeight; }
+
+@media (min-width: $device--sm) {
+    line-height: calculate-line-height( $ffSize, $device--sm );
+  }
+  @media (max-width: $device--md) {
+    line-height: calculate-line-height( $ffSize, $device--md );
+  }
+  @media (max-width: $device--lg) {
+    line-height: calculate-line-height( $ffSize, $device--lg );
+  }
+  @media (max-width: $device--xl) {
+    line-height: calculate-line-height( $ffSize, $device--xl );
+  }
+
+};
 
 @mixin button-bg($bg) {
   background: $bg;
   &:hover {
     background:darken($bg,18%);
-    transition: all 0.3s ease;
+    transition: $transition__hover;
   }
   &:active {
     background:darken($bg,25%);
-  } 
+  }
 }
 
 @mixin box-shadow($left, $top, $radius, $color) {

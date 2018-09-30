@@ -3,9 +3,11 @@ import React, { Component } from "react";
 import { ThemeProvider } from "styled-components";
 import { amazon, coolblue, airbnb } from '../../utils/themes';
 
-import Header from "../../Components/Header/index.js";
-import Content from "../../Components/Content/index.js";
-import Footer from "../../Components/Footer/index.js";
+import Header from "../../Components/Header/Header.js";
+import Content from "../../Components/Content/Content.js";
+import Footer from "../../Components/Footer/Footer.js";
+
+import Button from "../../Components/Button/Button.js";
 
 class Layout extends Component {
   state = {};
@@ -13,9 +15,23 @@ class Layout extends Component {
   render() {
     return (
       <ThemeProvider theme={airbnb}>
-        <div>
+        <div className='flex__container'>
           <Header />
-          <Content />
+          <Content>
+            <Button
+              active={false}
+              size={'md'}
+              color={'primary'}
+              children={'I\'m a link'}
+              href={'google.com'}
+            />
+            <Button
+              active={false}
+              size={'md'}
+              color={'primary'}
+              children={'I\'m a button'}
+            />
+          </Content>
           <Footer />
         </div>
       </ThemeProvider>
