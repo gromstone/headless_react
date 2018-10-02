@@ -4,22 +4,22 @@ import { NavLink } from "react-router-dom";
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 
-const Link = ({ data: { loading, error, allNavLists } }) => {
+const Link = ({ data: { loading, error, navigations } }) => {
     if (error) return <h1>Error fetching the post!</h1>
     if (!loading) {
         return(
             <nav className='nav flex__row'>
-              {allNavLists.map((link) => (
+              { navigations[0].linkName.map((link) => (
                 <NavLink
-                  key={link.id}
+                  key={link}
                   exact
-                  to={link ==='home' ? '/' : `/${link.linkName}`}
+                  to={link ==='Home' ? '/' : `/${link}`}
                   className='nav-link'
                   activeClassName='nav-link--isActive'
                 >
-                  {link.linkName}
+                  {link}
                 </NavLink>
-              ))}
+              )) }
             </nav>
         )
     }
@@ -27,11 +27,11 @@ const Link = ({ data: { loading, error, allNavLists } }) => {
     return <h2>Loading post...</h2>
 }
 
-export const mainNavList = gql`
+export const linksQuery = gql`
     query {
-      allNavLists {
-        id,linkColors,linkName
+      navigations {
+        linkName
       }
     }
 `
-export default graphql(mainNavList, {})(Link)
+export default graphql(linksQuery, {})(Link)
