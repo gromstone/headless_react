@@ -3,7 +3,9 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { wInfo } from '../src/utils/withInfo';
 
-storiesOf('Welcome', module).add(
+import '../src/scss/index.scss';
+
+storiesOf('Welcome', module).addWithJSX(
   'Design style guide',
   wInfo(`
     ### Notes

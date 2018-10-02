@@ -2,7 +2,7 @@ import React from "react";
 
 const Content = (props) => (
   <div className='flex__row'>
-    <div className='flex__col--xs-2'>MENU</div>
+    <aside className='flex__col--xs-2'>MENU</aside>
     <div className='flex__col--xs-10'>
       CONTENT
       { props.children }

@@ -9,7 +9,7 @@
   @if $ffColor { color: $ffColor; }
   @if $ffWeight { font-weight: $ffWeight; }
 
-@media (min-width: $device--sm) {
+  @media (min-width: $device--sm) {
     line-height: calculate-line-height( $ffSize, $device--sm );
   }
   @media (max-width: $device--md) {
@@ -24,19 +24,19 @@
 
 };
 
-@mixin button-bg($bg) {
-  background: $bg;
-  &:hover {
-    background:darken($bg,18%);
-    transition: $transition__hover;
+@mixin btn-size($pd-x,$pd-y,$font-size) {
+  font-size: $font-size;
+  padding: $pd-y $pd-x;
+};
+
+@mixin make-button($name, $color){
+  .btn--#{$name} {
+    background-color: $color !important;
   }
-  &:active {
-    background:darken($bg,25%);
-  }
-}
+};
 
 @mixin box-shadow($left, $top, $radius, $color) {
 	box-shadow: $left $top $radius $color;
 	-webkit-box-shadow: $left $top $radius $color;
 	-moz-box-shadow: $left $top $radius $color;
-}
+};

@@ -1,6 +1,36 @@
 .btn {
-  
-  &--primary {
+  box-shadow: $shadow-std;
+  border-radius: $border__radius;
+  color: $btn-basic-color;
+  cursor: pointer;
+  @include btn-size($btn-basic-padding-x, $btn-basic-padding-y, $btn-basic-font);
+  text-transform: uppercase;
+  white-space: normal;
+  word-wrap: break-word;
 
+  &:hover, &:active, &:focus {
+    box-shadow: $shadow-extra;
+    outline: 0;
   }
+
+  &--sm{
+    @include btn-size($btn-sm-padding-x, $btn-sm-padding-y, $btn-sm-font);
+  }
+
+  &--md{
+    @include btn-size($btn-md-padding-x, $btn-md-padding-y, $btn-md-font);
+  }
+
+  &--lg{
+    @include btn-size($btn-lg-padding-x, $btn-lg-padding-y, $btn-lg-font);
+  }
+
+  &--tb{
+    padding: $btn-tb-padding-y $btn-tb-padding-x;
+  }
+
+}
+
+@each $btn-name, $color_val in $colors {
+  @include make-button($btn-name, $color_val)
 }

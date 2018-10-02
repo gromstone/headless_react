@@ -1,10 +1,12 @@
-@import "font-face",
-        "variables",
+@import "font-face";
+
+@import "variables",
         "functions",
-        "base",
         "mixin",
-        "global",
-        "flex-grid";
+        "base",
+        "global";
+
+@import "flex-grid";
 
 @import "containers",
         "components";

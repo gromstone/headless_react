@@ -167,10 +167,27 @@ module.exports = {
                   options: {
                     modules: true,
                     sourceMap: true,
-                    localIdentName: '[name]__[local]___[hash:base64:5]'
+                    localIdentName: '[local]'
                   }
                 },
-              'postcss-loader'
+              {
+                loader: require.resolve('postcss-loader'),
+                options: {
+                  indent: 'postcss',
+                  plugins: () => [
+                    require('postcss-flexbugs-fixes'),
+                    autoprefixer({
+                      browsers: [
+                        '>1%',
+                        'last 2 versions',
+                        'FireFox ESR',
+                        'not ie <9',
+                      ],
+                      flexbox: 'no-2009',
+                    }),
+                  ],
+                },
+              },
               ]
             }))
           },

@@ -1,11 +1,8 @@
-import React from 'react';
 import { configure } from '@storybook/react';
-import { addDecorator } from '@storybook/react';
+import { setAddon, addDecorator } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { withKnobs } from '@storybook/addon-knobs';
 import JSXAddon from 'storybook-addon-jsx';
-
-import '../src/scss/index.scss';
 
 const req = require.context('../UI', true, /stories\.js$/);
 
@@ -14,8 +11,8 @@ function loadStories() {
   req.keys().forEach(req);
 }
 
-addDecorator(withKnobs);
 addDecorator( (story, context) => withInfo(context.kind)(story)(context) );
-
+addDecorator(withKnobs);
+setAddon(JSXAddon)
 
 configure(loadStories, module);
