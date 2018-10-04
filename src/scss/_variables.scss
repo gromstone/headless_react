@@ -9,6 +9,7 @@ $device--xl:               75em; //1200px
 $color__primary:           #2891cb !default; //blue
 $color__secondary:         #ca6e29 !default; //orange
 $color__optional:          #276b53 !default; //green
+$color__success:           #00c851 !default; //green lime
 $color__default:           #444 !default;    //dark grey
 $color__warning:           #ffbb33 !default; //yellow
 $color__red:               #C10000 !default;
@@ -56,6 +57,11 @@ $border__radius:           .125rem !default;
 $border__round:            10em !default;
 $border__circle:           50% !default;
 
+//padding
+$padding-all-std:           2rem !default;
+$padding-small-x:           .4rem !default;
+$padding-small-y:           .25rem !default;
+
 //dividers
 $hr-ligth:                 lighten($color__white, 2%) !default;
 $hr-dark:                  darken($color__default, 2%) !default;
@@ -75,16 +81,16 @@ $btn-icon-sm:              .5rem;
 $btn-icon-md:              .8rem;
 $btn-icon-lg:              1rem;
 
-$btn-sm-font:              .7rem !default;
+$btn-sm-font:              .8rem !default;
 $btn-sm-padding-x:         1.6rem !default;
-$btn-sm-padding-y:         .6rem !default;
+$btn-sm-padding-y:         .8rem !default;
 
 $btn-md-font:              1.2rem !default;
-$btn-md-padding-x:         1.6rem !default;
+$btn-md-padding-x:         2.5rem !default;
 $btn-md-padding-y:         1.1rem !default;
 
 $btn-lg-font:              1.6rem !default;
-$btn-lg-padding-x:         2.5rem !default;
+$btn-lg-padding-x:         3.5rem !default;
 $btn-lg-padding-y:         1.1rem !default;
 
 $btn-tb-padding-x:         1rem !default;

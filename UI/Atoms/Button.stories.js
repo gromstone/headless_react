@@ -4,15 +4,15 @@ import { select, text, boolean } from '@storybook/addon-knobs/react';
 import { action } from '@storybook/addon-actions';
 
 
-import Button from '../../src/Components/Button/Button';
+import Button from '../../src/Components/Button';
 
 storiesOf('Atom/Button', module)
   .add('Button w/knobs', () =>
     <Button
       active={boolean("Active", false)}
-      size={select("Size",['xs','sm','md','lg','tb'], 'md')}
+      size={select("Size",['sm','md','lg','tb'], 'md')}
       className={text("classes", '')}
-      color={select("Color",['primary','success','secondary','info','danger'], 'default')}
+      color={select("Color",['primary','success','secondary','info','danger', 'optional', 'default'], 'primary')}
       gradient={text("Gradient", '')}
       role={text("Role", '')}
       type={text("Type", '')}

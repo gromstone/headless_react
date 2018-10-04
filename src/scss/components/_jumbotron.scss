@@ -1,0 +1,13 @@
+.jumbotron {
+  background-color: $color__white;
+  box-shadow: $shadow-extra;
+  border-radius:$border__radius;
+  min-height: 280px;
+  padding: $padding-all-std;
+  text-align: center;
+  width: calc(100% / 1.1);
+
+  &--fluid {
+    width: 100%;
+  }
+}

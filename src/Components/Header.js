@@ -1,5 +1,6 @@
 import React from "react";
-import Nav from "../../Components/Navigation/Navigation";
+//import { Row, Col } from './FlexGrid'
+import Nav from "./Navigation";
 
 const Header = () => {
   return (

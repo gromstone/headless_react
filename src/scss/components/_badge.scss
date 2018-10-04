@@ -1,0 +1,19 @@
+.badge {
+  box-shadow: $shadow-std;
+  border-radius: $border__radius;
+  color: $color__white;
+  display: inline-block;
+  font-weight: 700;
+  text-align: center;
+  padding: $padding-small-y $padding-small-x;
+  
+  &--pill {
+    border-radius: $border__round;
+    padding-left: $padding-all-std;
+    padding-right: $padding-all-std;
+  }
+}
+
+@each $name, $color in $colors {
+  @include make-badge ($name, $color);
+}

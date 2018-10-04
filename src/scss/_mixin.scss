@@ -24,6 +24,41 @@
 
 };
 
+@mixin make-nav( $tcolor, $color, $color-1, $bgcolor) {
+  .navbar-nav {
+
+    .nav-link {
+
+      &.disabled {
+        color: $tcolor;
+
+        &:hover {
+          color: $tcolor
+        }
+      }
+    }
+  }
+  .navbar-nav {
+
+    .nav-link {
+      color: $color;
+      transition: $transition__hover;
+
+      &:hover {
+        color: $color-1
+      }
+    }
+    &.active>.nav-link {
+      background-color: $bgcolor;
+      &:hover {
+        color: $color;
+      }
+    }
+  }
+
+  padding: $pd-y $pd-x;
+};
+
 @mixin btn-size($pd-x,$pd-y,$font-size) {
   font-size: $font-size;
   padding: $pd-y $pd-x;
@@ -32,6 +67,25 @@
 @mixin make-button($name, $color){
   .btn--#{$name} {
     background-color: $color !important;
+    color: alter-set-text-color($color) !important;
+
+    &:hover{
+      background-color: lighten($color, 5%)!important;
+    }
+    &:focus {
+      box-shadow: $shadow-extra;
+    }
+    &:focus, &:active, &.active {
+      background-color: darken($color, 10%)!important;
+    }
+  }
+};
+
+
+@mixin make-badge($name, $color){
+  .badge--#{$name} {
+    background-color: $color !important;
+    color: alter-set-text-color($color) !important;
   }
 };
 

@@ -5,7 +5,7 @@ import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { ApolloProvider } from 'react-apollo';
 
-import Layout from './Containers/Layout/Layout';
+import Layout from './Containers/Layout';
 
 import './scss/index.scss'
 

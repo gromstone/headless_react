@@ -1,13 +1,14 @@
 import React from "react";
+import { FlexContainer, Row, Col } from './FlexGrid'
 
 const Content = (props) => (
-  <div className='flex__row'>
+  <Row>
     <aside className='flex__col--xs-2'>MENU</aside>
-    <div className='flex__col--xs-10'>
+    <Col xs={10}>
       CONTENT
       { props.children }
-    </div>
-  </div>
+    </Col>
+  </Row>
 );
 
 export default Content;

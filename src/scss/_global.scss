@@ -1,5 +1,5 @@
 body {
-  background: lighten(#999, 20%);
+  background-color: $color__white;
   margin: 0;
   padding: 0;
   @include font-style($font-size__base, amiko, $color__default, normal);

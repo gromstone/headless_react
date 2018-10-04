@@ -4,10 +4,19 @@ $colors: map-merge((
   "secondary" : $color__secondary,
   "optional" :  $color__optional,
   "default" :   $color__default,
+  "success":    $color__success,
   "info" :      $color__info,
   "danger" :    $color__danger,
   "warning" :   $color__warning,
 ), $colors);
+
+@function alter-set-text-color($color) {
+  @if (lightness($color) > 80) {
+    @return $color__black;
+  } @else {
+    @return $color__white;
+  }
+}
 
 @function calc-em( $target, $context: $font-size__base ) {
     @return ($target / $context) * 1rem;
@@ -15,13 +24,11 @@ $colors: map-merge((
 
 @function pow( $number, $exponent ) {
 	$value: 1;
-
 	@if $exponent > 0 {
 		@for $i from 1 through $exponent {
 			$value: $value * $number;
 		}
 	}
-
 	@return $value;
 }
 
@@ -29,13 +36,11 @@ $colors: map-merge((
 	@if type-of( $number ) == 'number' and not unitless( $number ) {
 		@return $number / ( $number * 0 + 1 );
 	}
-
 	@return $number;
 }
 
 @function calculate-line-height( $font-size, $content-width, $ratio: 1.61803398875 ) {
 	$font-size: strip-unit( $font-size );
 	$content-width: strip-unit( $content-width );
-
-	@return $ratio - ( ( 1 / ( 2 * $ratio ) ) * ( 1 - ( $content-width / ( pow( ( $font-size * $ratio ), 2 ) ) ) ) );
+	@return $ratio - ( ( 1 / ( 5 * $ratio ) ) * ( 1 - ( $content-width / ( pow( ( $font-size * $ratio ), 2 ) ) ) ) );
 }

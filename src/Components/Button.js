@@ -8,24 +8,24 @@ class Button extends Component {
   }
 
   static propTypes = {
-    tag:PropTypes.string,
-    active:PropTypes.bool,
-    size:PropTypes.oneOf(['xs','sm','md','lg','tb']),
-    className:PropTypes.string,
-    color:PropTypes.string,
-    gradient:PropTypes.string,
-    role:PropTypes.string,
-    type:PropTypes.string,
-    disabled:PropTypes.bool,
-    outline:PropTypes.bool,
-    rounded:PropTypes.bool,
-    circle:PropTypes.bool,
-    float:PropTypes.bool,
-    flat:PropTypes.bool,
-    block:PropTypes.bool,
-    innerRef:PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
-    onClick:PropTypes.func,
-    children:PropTypes.node
+    tag: PropTypes.string,
+    active: PropTypes.bool,
+    size: PropTypes.oneOf(['xs','sm','md','lg','tb']),
+    className: PropTypes.string,
+    color: PropTypes.string,
+    gradient: PropTypes.string,
+    role: PropTypes.string,
+    type: PropTypes.string,
+    disabled: PropTypes.bool,
+    outline: PropTypes.bool,
+    rounded: PropTypes.bool,
+    circle: PropTypes.bool,
+    float: PropTypes.bool,
+    flat: PropTypes.bool,
+    block: PropTypes.bool,
+    innerRef: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+    onClick: PropTypes.func,
+    children: PropTypes.node
   }
 
   static defaultProps = {

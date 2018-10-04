@@ -4,17 +4,18 @@ import { Router, Switch, Route } from "react-router-dom";
 //import { ThemeProvider } from "styled-components";
 //import { amazon, coolblue, airbnb } from '../../utils/themes';
 
-import Header from "../../Components/Header/Header.js";
-import Content from "../../Components/Content/Content.js";
-import Footer from "../../Components/Footer/Footer.js";
+import { FlexContainer } from '../Components/FlexGrid'
+import Header from "../Components/Header";
+import Content from "../Components/Content";
+import Footer from "../Components/Footer";
 
-import Button from "../../Components/Button/Button.js";
+import Button from "../Components/Button";
 
 class Layout extends Component {
 
   render() {
     return (
-        <main className='flex__container'>
+        <FlexContainer fluid>
           {/*
               <ThemeProvider theme={airbnb}></ThemeProvider>
           */}
@@ -52,7 +53,7 @@ class Layout extends Component {
             </Content>
           </Switch>
           <Footer />
-        </main>
+        </FlexContainer>
     );
   }
 }
