@@ -1,6 +1,6 @@
 import React from "react";
 
-import { NavbarUl, NavLink } from './Nav';
+import { NavbarUl, NavLink } from '../Nav';
 
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';

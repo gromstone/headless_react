@@ -10,9 +10,9 @@ You can find the most recent version of this guide [here](https://github.com/fac
 - [Folder Structure](#folder-structure)
 - [Available Scripts](#available-scripts)
   - [npm start](#npm-start)
+  - [npm storybook](#npm-storybook)
   - [npm test](#npm-test)
   - [npm run build](#npm-run-build)
-  - [npm run eject](#npm-run-eject)
 - [Supported Browsers](#supported-browsers)
 - [Supported Language Features and Polyfills](#supported-language-features-and-polyfills)
 - [Syntax Highlighting in the Editor](#syntax-highlighting-in-the-editor)
@@ -126,23 +126,45 @@ We are always open to [your feedback](https://github.com/facebookincubator/creat
 
 ## Folder Structure
 
-After creation, your project should look like this:
-
 ```
 my-app/
   README.md
-  node_modules/
   package.json
+  package-lock.json
+  config/
+    jest/
+    webpack.config.dev.js
+    webpack.config.prod.js
+    webpack.DevServer.config.js
+  scripts/
+    start.js
+    build.js
+    test.js
   public/
     index.html
     favicon.ico
+  .storybook/
+    addons.js
+    config.js
+    preview-head.html
+    webpack.config.js
+    WelcomeStory.js
   src/
-    App.css
+    assets/
+    Components/
+    Containers/
+    hoc/
+    scss/
+    utils/
     App.js
     App.test.js
-    index.css
     index.js
-    logo.svg
+  UI/
+    Atoms/
+    Molecules/
+    Organism/
+    Template/
+    Environment/
 ```
 
 For the project to build, **these files must exist with exact filenames**:
@@ -173,6 +195,14 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
+### `npm storybook`
+
+Runs the Storybook UI in the development mode.<br>
+Open [http://localhost:6006](http://localhost:6006) to view it in the browser.
+
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.<br>
@@ -187,16 +217,6 @@ The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
 See the section about [deployment](#deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
 ## Supported Browsers
 
@@ -300,7 +320,7 @@ In the WebStorm menu `Run` select `Edit Configurations...`. Then click `+` and s
 
 Start your app by running `npm start`, then press `^D` on macOS or `F9` on Windows and Linux or click the green debug icon to start debugging in WebStorm.
 
-The same way you can debug your application in IntelliJ IDEA Ultimate, PhpStorm, PyCharm Pro, and RubyMine. 
+The same way you can debug your application in IntelliJ IDEA Ultimate, PhpStorm, PyCharm Pro, and RubyMine.
 
 ## Formatting Code Automatically
 
@@ -1989,7 +2009,7 @@ If you’re using [Apache HTTP Server](https://httpd.apache.org/), you need to c
     RewriteRule ^ index.html [QSA,L]
 ```
 
-It will get copied to the `build` folder when you run `npm run build`. 
+It will get copied to the `build` folder when you run `npm run build`.
 
 If you’re using [Apache Tomcat](http://tomcat.apache.org/), you need to follow [this Stack Overflow answer](https://stackoverflow.com/a/41249464/4878474).
 
@@ -2419,7 +2439,7 @@ To resolve this:
 1. Open an issue on the dependency's issue tracker and ask that the package be published pre-compiled.
   * Note: Create React App can consume both CommonJS and ES modules. For Node.js compatibility, it is recommended that the main entry point is CommonJS. However, they can optionally provide an ES module entry point with the `module` field in `package.json`. Note that **even if a library provides an ES Modules version, it should still precompile other ES6 features to ES5 if it intends to support older browsers**.
 
-2. Fork the package and publish a corrected version yourself. 
+2. Fork the package and publish a corrected version yourself.
 
 3. If the dependency is small enough, copy it to your `src/` folder and treat it as application code.
 

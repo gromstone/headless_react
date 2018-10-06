@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classname';
 
-class NavList extends Component {
+class Navbar extends Component {
   state = {
     isCollapsed: false
   }
@@ -86,4 +86,4 @@ class NavList extends Component {
 
 }
 
-export default NavList;
+export default Navbar;

@@ -1,17 +1,20 @@
 import React from "react";
-//import { Row, Col } from './FlexGrid'
-import { Navbar } from './Nav';
-import Nav from "./Navigation";
+import { Navbar, NavBrand, Navquery, NavUl, NavLi } from './Nav';
 
 const Header = () => {
   return (
     <div className='header flex__row'>
       <Navbar>
-        <Nav/>
+        <NavBrand>
+          Logo
+        </NavBrand>
+        <NavUl>
+          <NavLi> <a href="#">Other link</a></NavLi>
+          <NavLi> <a href="#">Another link</a></NavLi>
+          <NavLi> <a href="#">And Another link</a></NavLi>
+        </NavUl>
+        <Navquery/>
       </Navbar>
-
-      HOME
-
     </div>
   )
 };

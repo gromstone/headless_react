@@ -5,7 +5,7 @@ import classNames from 'classname';
 class NavUl extends Component {
 
   static propTypes = {
-    tag: PropTypes.onOfType([PropTypes.func, PropTypes.string]),
+    tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
     color: PropTypes.string,
     children: PropTypes.node,
     tabs: PropTypes.bool,
@@ -33,17 +33,17 @@ class NavUl extends Component {
       'nav',
       tabs && 'nav__tabs',
       pills && 'nav__pills',
-      header && 'nav__pills card__header__pills'
+      header && 'nav__pills card__header__pills',
       pills && color ? 'pill--' + color : false,
-      (tabs || altTabs) && color ? 'tabs--' + this.props.color : false
+      (tabs || altTabs) && color ? 'tabs--' + this.props.color : false,
       className
     )
 
     return(
-      <Tag {...attributes} className={classes}> { this.props.children }</Tag>
+      <Tag { ...attributes } className={ classes }> { children }</Tag>
     );
   }
 
 }
 
-export default NavU;
+export default NavUl;

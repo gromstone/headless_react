@@ -5,10 +5,10 @@ import classNames from 'classname';
 class NavLi extends Component {
 
   static propTypes = {
-    tag: PropTypes.onOfType([PropTypes.func, PropTypes.string]),
-    children: PropTypes.node,
+    tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
     active: PropTypes.bool,
-    className: PropTypes.string
+    className: PropTypes.string,
+    children: PropTypes.node
   };
 
   static defaultProps = {
@@ -29,7 +29,7 @@ class NavLi extends Component {
     )
 
     return(
-      <Tag {...attributes} className={classes}> { children }</Tag>
+      <Tag { ...attributes } className={ classes }> { children }</Tag>
     );
   }
 

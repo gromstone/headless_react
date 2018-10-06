@@ -6,7 +6,8 @@ class NavBrand extends Component {
 
   static propTypes = {
     tag: PropTypes.onOfType([PropTypes.func, PropTypes.string]),
-    className: PropTypes.string
+    className: PropTypes.string,
+    children: PropTypes.node,
   };
 
   static defaultProps = {
@@ -25,7 +26,7 @@ class NavBrand extends Component {
     )
 
     return(
-      <Tag {...attributes} className={classes}> { this.props.children }</Tag>
+      <Tag {...attributes} className={classes}> { children }</Tag>
     );
   }
 

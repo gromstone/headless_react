@@ -41,7 +41,7 @@ class NavLink extends Component {
 
     const classes = classNames(
       'nav-link',
-      disabled ? 'disabled' : 'Ripple-parent',
+      disabled ? 'disabled' : '',
       active && 'active',
       className
     );
