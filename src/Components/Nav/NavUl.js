@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classname';
 
-class NavList extends Component {
+class NavUl extends Component {
 
   static propTypes = {
     tag: PropTypes.onOfType([PropTypes.func, PropTypes.string]),
@@ -46,4 +46,4 @@ class NavList extends Component {
 
 }
 
-export default NavList;
+export default NavU;

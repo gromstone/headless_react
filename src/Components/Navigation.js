@@ -1,7 +1,6 @@
 import React from "react";
 
-import Navbar from './Navbar';
-import NavLink from './NavLink';
+import { NavbarUl, NavLink } from './Nav';
 
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
@@ -10,7 +9,7 @@ const Link = ({ data: { loading, error, navigations } }) => {
     if (error) return <h1>Error fetching the post!</h1>
     if (!loading) {
         return(
-            <Navbar>
+            <NavbarUl>
               { navigations[0].linkName.map((link) => (
                 <NavLink
                   key={link}
@@ -22,7 +21,7 @@ const Link = ({ data: { loading, error, navigations } }) => {
                   {link}
                 </NavLink>
               )) }
-            </Navbar>
+            </NavbarUl>
         )
     }
 
