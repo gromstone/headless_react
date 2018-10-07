@@ -9,7 +9,8 @@ storiesOf('Atom/Spinner', module)
   .add('Spinner w/knobs', () =>
     <Spinner
       size={select("Size",['sm','md','lg'], 'sm')}
-      wrappedClasses={text("Wrapper Classes", '')}
+      type={select("Type",['circle','cube'], 'cube')}
+      wrappedclasses={text("Wrapper Classes", '')}
       className={text("Classes", '')}
     />
   )

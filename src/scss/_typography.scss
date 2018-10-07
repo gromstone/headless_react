@@ -1,0 +1,43 @@
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+}
+
+.xlHeadline {
+  font-size: calc-rem(56);
+}
+
+.lgHeadline {
+  font-size: calc-rem(34);
+}
+
+.mdHeadline {
+  font-size: calc-rem(28);
+}
+
+.smHeadline {
+  font-size: calc-rem(24);
+}
+
+.lg-copy {
+  font-size: calc-rem(19);
+}
+
+.sm-copy {
+  font-size: calc-rem(14);
+}
+
+.caption {
+  font-size: calc-rem(12);
+}
+
+.heading-color {
+  color: $color__primary !important;
+}
+
+.inactive {
+  color: $color__inactive;
+}
+
+.bolded {
+  font-weight: 700;
+}

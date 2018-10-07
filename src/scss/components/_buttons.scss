@@ -3,10 +3,11 @@
   border-radius: $border__radius;
   color: $btn-basic-color;
   cursor: pointer;
-  @include btn-size($btn-basic-padding-x, $btn-basic-padding-y, $btn-basic-font);
+  font-family: $font-family--all;
   text-transform: uppercase;
   white-space: normal;
   word-wrap: break-word;
+  @include btn-size($btn-basic-padding-x, $btn-basic-padding-y, $btn-basic-font);
 
   &:hover, &:active, &:focus {
     box-shadow: $shadow-extra;

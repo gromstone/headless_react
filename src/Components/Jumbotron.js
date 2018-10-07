@@ -10,7 +10,9 @@ class Jumbotron extends Component {
     className:PropTypes.string,
   }
 
-  static defaultProps = { fluid: false }
+  static defaultProps = {
+    fluid: false 
+  }
 
   render(){
     let closeBtn;

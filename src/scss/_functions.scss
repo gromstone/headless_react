@@ -18,7 +18,7 @@ $colors: map-merge((
   }
 }
 
-@function calc-em( $target, $context: $font-size__base ) {
+@function calc-rem( $target, $context: $font-size__base ) {
     @return ($target / $context) * 1rem;
 }
 

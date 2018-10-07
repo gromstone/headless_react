@@ -1,11 +1,11 @@
 @mixin font-style( $ffSize:false, $ffFamily:false, $ffColor:flase , $ffWeight:false ){
-  @if $ffFamily == amiko {
+  @if $ffFamily == dosis {
     font-family: $font-family--all;
-  } @else if $ffFamily == alfa {
+  } @else if $ffFamily == rokkitt {
     font-family: $font-family--special;
   }
 
-  @if $ffSize { font-size: calc-em($ffSize); }
+  @if $ffSize { font-size: calc-rem($ffSize); }
   @if $ffColor { color: $ffColor; }
   @if $ffWeight { font-weight: $ffWeight; }
 

@@ -2,11 +2,13 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { select, text, boolean } from '@storybook/addon-knobs/react';
 import { action } from '@storybook/addon-actions';
+import { checkA11y } from '@storybook/addon-a11y';
 
 
 import Button from '../../src/Components/Button';
 
 storiesOf('Atom/Button', module)
+  .addDecorator(checkA11y)
   .add('Button w/knobs', () =>
     <Button
       active={boolean("Active", false)}
@@ -14,7 +16,7 @@ storiesOf('Atom/Button', module)
       className={text("classes", '')}
       color={select("Color",['primary','success','secondary','info','danger', 'optional', 'default'], 'primary')}
       gradient={text("Gradient", '')}
-      role={text("Role", '')}
+      role={text("Role", 'button')}
       type={text("Type", '')}
       disabled={boolean("Disabled", false)}
       outline={boolean("Outline", false)}

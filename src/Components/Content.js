@@ -1,5 +1,7 @@
 import React from "react";
-import { FlexContainer, Row, Col } from './FlexGrid'
+import { FlexContainer, Row, Col } from './FlexGrid';
+//import Card from './Card';
+//import { CardHeader, CardFooter, CardBody, CardContent, CardImg } from './CardElements';
 
 const Content = (props) => (
   <Row>
