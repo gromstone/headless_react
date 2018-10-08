@@ -33,7 +33,7 @@ class CardFooter extends Component {
       (color && !text) && 'white-text',
       border && 'border-' + border,
       mute && 'text-mute',
-      transparent && 'transparent-bg'
+      transparent && 'transparent-bg',
       className
     )
 

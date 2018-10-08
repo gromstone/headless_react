@@ -9,9 +9,9 @@ const Header = () => {
           Logo
         </NavBrand>
         <NavUl>
-          <NavLi> <a href="#">Other link</a></NavLi>
-          <NavLi> <a href="#">Another link</a></NavLi>
-          <NavLi> <a href="#">And Another link</a></NavLi>
+          <NavLi> <a href="/other">Other link</a></NavLi>
+          <NavLi> <a href="/another">Another link</a></NavLi>
+          <NavLi> <a href="/more">And Another link</a></NavLi>
         </NavUl>
         <Navquery/>
       </Navbar>

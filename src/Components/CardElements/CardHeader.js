@@ -29,7 +29,7 @@ class CardHeader extends Component {
       text && text,
       (color && !text) && 'white-text',
       border && 'border-' + border,
-      transparent && 'transparent-bg'
+      transparent && 'transparent-bg',
       className
     )
 

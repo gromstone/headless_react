@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classname';
 
-//import Mask from '../Mask';
-//import View from '../View';
+import Mask from '../StyleElements/Mask';
+import View from '../StyleElements/View';
 
 class CardImg extends Component {
   state = {
@@ -12,7 +12,7 @@ class CardImg extends Component {
 
   static propTypes = {
     tag: PropTypes.oneOfType([PropTypes.func,PropTypes.string]),
-    cascade: PropTypes.string,
+    cascade: PropTypes.bool,
     className: PropTypes.string
   };
 
