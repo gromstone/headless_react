@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 
 
 import Aux from '../../src/hoc/aux';
-import Jumbotron from '../../src/Components/Jumbotron';
+import Jumbotron from '../../src/Components/StyleElements/Jumbotron';
 
 storiesOf('Atom/Jumbotron', module)
   .add('jumbotron w/knobs', () =>

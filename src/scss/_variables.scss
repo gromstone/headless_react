@@ -21,12 +21,12 @@ $color__grey--bg:          #9d9d9d !default;
 $color__white:             #fff !default;
 $color__black:             #000 !default;
 
-$color__primary--light:    lighten($color__primary, 10%) !default;
-$color__secondary--light:  lighten($color__secondary, 10%) !default;
-$color__optional--light:   lighten($color__optional, 10%) !default;
-$color__red--light:        lighten($color__red, 10%) !default;
-$color__info--light:       lighten($color__info, 5%) !default;
-$color__bgGrey--light:     lighten($color__grey--bg, 5%) !default;
+$color__primary--light:    rgba($color__primary, .85) !default;
+$color__secondary--light:  rgba($color__secondary, .85) !default;
+$color__optional--light:   rgba($color__optional, .85) !default;
+$color__red--light:        rgba($color__red, .85) !default;
+$color__info--light:       rgba($color__info, .85) !default;
+$color__bgGrey--light:     rgba($color__grey--bg, .85) !default;
 
 $color__red--dark:         darken($color__red, 10%) !default;
 $color__bgGrey--dark:      darker($color__grey--bg, 10%) !default;
@@ -54,7 +54,7 @@ $shadow-extra:             0 8px 18px rgba(0,0,0, .2), 0 6px 20px rgba(0,0,0, .1
 
 //border
 $border__std:              1px solid $color__bgGrey--light;
-$border__radius:           .125rem !default;
+$border__radius:           .3rem !default;
 $border__round:            10em !default;
 $border__circle:           50% !default;
 
@@ -82,17 +82,17 @@ $btn-icon-sm:              .5rem;
 $btn-icon-md:              .8rem;
 $btn-icon-lg:              1rem;
 
-$btn-sm-font:              .8rem !default;
-$btn-sm-padding-x:         1.6rem !default;
+$btn-sm-font:              .95rem !default;
+$btn-sm-padding-x:         1.7rem !default;
 $btn-sm-padding-y:         .8rem !default;
 
-$btn-md-font:              1.2rem !default;
-$btn-md-padding-x:         2.5rem !default;
-$btn-md-padding-y:         1.1rem !default;
+$btn-md-font:              1.05rem !default;
+$btn-md-padding-x:         2.7rem !default;
+$btn-md-padding-y:         .9rem !default;
 
-$btn-lg-font:              1.6rem !default;
-$btn-lg-padding-x:         3.5rem !default;
-$btn-lg-padding-y:         1.1rem !default;
+$btn-lg-font:              1.2rem !default;
+$btn-lg-padding-x:         3.7rem !default;
+$btn-lg-padding-y:         1rem !default;
 
 $btn-tb-padding-x:         1rem !default;
 $btn-tb-padding-y:         .4rem !default;

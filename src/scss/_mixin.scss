@@ -81,6 +81,28 @@
   }
 };
 
+@mixin make-button-outline($name, $color){
+  .btn-outline--#{$name} {
+    background-color: transparent !important;
+    border: 2px solid $color !important;
+    color: $color !important;
+
+    &:focus, &:active, &:active, &.active {
+      background-color: transparent !important;
+      border-color: $color !important;
+      color: $color !important;
+    }
+  }
+};
+
+@mixin make-float-button($fs, $h, $w){
+  height: $h;
+  width: $w;
+
+  i {
+    font-size: $fs;
+  }
+};
 
 @mixin make-badge($name, $color){
   .badge--#{$name} {

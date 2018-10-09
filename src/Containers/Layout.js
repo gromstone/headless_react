@@ -29,7 +29,7 @@ class Layout extends Component {
                   <Route exact path="/about" component={About} />
               */}
               <Card>
-                <CardImg cascade src="https://images.freeimages.com/images/large-previews/1ad/tractor-2-1386664.jpg" />
+                <CardImg cascade src={"https://images.freeimages.com/images/large-previews/1ad/tractor-2-1386664.jpg"} />
                 <CardBody cascade>
                   <Button
                     active={false}

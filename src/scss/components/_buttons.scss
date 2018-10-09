@@ -14,6 +14,11 @@
     outline: 0;
   }
 
+  &:disabled, &.disabled {
+    pointer-events: none;
+    opacity: .65;
+  }
+
   &--sm{
     @include btn-size($btn-sm-padding-x, $btn-sm-padding-y, $btn-sm-font);
   }
@@ -30,8 +35,108 @@
     padding: $btn-tb-padding-y $btn-tb-padding-x;
   }
 
+  i {
+    position: relative;
+    font-size: calc-rem(16);
+  }
+
+  &--flat {
+    background: transparent;
+    box-shadow: none;
+    border: 0;
+    color: inherit !important;
+
+    &:hover , &:focus, &:active {
+      text-decoration: underline;
+      box-shadow: none;
+    }
+
+    &:active {
+      box-shadow: none;
+    }
+  }
+
+  &--block {
+    display: block;
+    margin: inherit;
+    width: 100%;
+  }
+
+  &--link {
+    box-shadow: none;
+    background-color: transparent;
+
+    &:hover , &:focus, &:active {
+      box-shadow: none !important;
+      background-color: transparent;
+    }
+
+  }
+
+  &--round {
+    border-radius: $border__round;
+  }
+
+  &--circle {
+    border-radius: $border__circle;
+    height: 50px;
+    width: 50px;
+    padding: 0;
+  }
+
+  &--float {
+    box-shadow: $shadow-std;
+    border-radius: $border__round;
+    cursor: pointer;
+    display: inline-block;
+    font-family: $font-family--all;
+    padding: 0;
+    position: relative;
+    vertical-align: middle;
+    overflow: hidden;
+    transition: $transition__hover;
+    z-index: 1;
+    @include make-float-button(calc-rem(16), 50px, 50px);
+
+    &:disabled, &.disabled {
+      pointer-events: none;
+      opacity: .65;
+    }
+
+    &:hover, &:focus {
+      box-shadow: $shadow-extra;
+    }
+
+    &:before {
+      border-radius: 0;
+    }
+
+    i {
+      display: inline-block;
+      width: inherit;
+      text-align: center;
+      color: $color__white;
+    }
+
+  }
+
+  &[class*="btn-outline--"] {
+    padding-top: .4rem;
+    padding-bottom: .7rem;
+
+    &.btn--sm {
+      padding-top: .4rem;
+      padding-bottom: .4rem;
+    }
+  }
+
+}
+
+button, html [type="button"], [type="reset"], [type="submit"] {
+  appearance: none !important;
 }
 
 @each $btn-name, $color_val in $colors {
-  @include make-button($btn-name, $color_val)
+  @include make-button($btn-name, $color_val);
+  @include make-button-outline($btn-name, $color_val);
 }

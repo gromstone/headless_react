@@ -60,7 +60,7 @@ class Button extends Component {
     const classes = classNames(
       size ? `btn--${size}` : false,
       rounded ? 'btn--round' : false,
-      flat ? 'btn--flat' : gradient ? `${gradient}--gradient` : `btn${outline ? '--outline' : ''}--${color}`,
+      flat ? 'btn--flat' : gradient ? `${gradient}--gradient` : `btn${outline ? '-outline' : ''}--${color}`,
       float ? 'btn--float' : 'btn',
       circle ? 'btn--circle' : false,
       action ? 'btn--action' : false,

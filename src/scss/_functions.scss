@@ -3,7 +3,7 @@ $colors: map-merge((
   "primary" :   $color__primary,
   "secondary" : $color__secondary,
   "optional" :  $color__optional,
-  "default" :   $color__default,
+  "default" :   $color__primary--light,
   "success":    $color__success,
   "info" :      $color__info,
   "danger" :    $color__danger,

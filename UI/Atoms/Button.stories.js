@@ -12,8 +12,8 @@ storiesOf('Atom/Button', module)
   .add('Button w/knobs', () =>
     <Button
       active={boolean("Active", false)}
-      size={select("Size",['sm','md','lg','tb'], 'md')}
-      className={text("classes", '')}
+      size={select("Size",['sm','md','lg','default'], 'md')}
+      className={text("Classes", '')}
       color={select("Color",['primary','success','secondary','info','danger', 'optional', 'default'], 'primary')}
       gradient={text("Gradient", '')}
       role={text("Role", 'button')}

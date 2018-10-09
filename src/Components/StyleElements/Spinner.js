@@ -6,7 +6,7 @@ class Spinner extends Component {
 
   static propTypes = {
     color: PropTypes.string,
-    size: PropTypes.string,
+    size: PropTypes.oneOf(['sm','md','lg']),
     type: PropTypes.string,
     wrappedclasses: PropTypes.string,
     className: PropTypes.string
