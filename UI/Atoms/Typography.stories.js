@@ -4,8 +4,7 @@ import { text } from '@storybook/addon-knobs/react';
 import { action } from '@storybook/addon-actions';
 import { checkA11y } from '@storybook/addon-a11y';
 
-import { FlexContainer, Col } from '../../src/Components/FlexGrid';
-import Row from '../../src/Components/Grid/Row';
+import { FlexContainer, Row, Col } from '../../src/Components/FlexGrid';
 
 storiesOf('Atom/Typography', module)
   .addDecorator(checkA11y)

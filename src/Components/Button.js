@@ -7,6 +7,8 @@ class Button extends Component {
     cursorPos:{}
   }
 
+  onClick = this.onClick.bind(this);
+  
   static propTypes = {
     tag: PropTypes.string,
     active: PropTypes.bool,

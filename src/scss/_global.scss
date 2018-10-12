@@ -1,6 +1,15 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: $color__white;
+  background-color: darken($color__white, 5%);
   margin: 0;
   padding: 0;
   @include font-style($font-size__base, dosis, $color__default, normal);
+}
+
+hr {
+  margin: 0;
+  padding: 0;
 }

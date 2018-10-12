@@ -9,6 +9,8 @@ class NavLink extends Component {
     cursorPos:{}
   };
 
+  handleClick = this.handleClick.bind(this);
+
   static propTypes = {
     active: PropTypes.bool,
     className: PropTypes.string,

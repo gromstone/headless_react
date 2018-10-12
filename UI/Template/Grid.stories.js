@@ -3,8 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { select, text, boolean, number } from '@storybook/addon-knobs/react';
 import { action } from '@storybook/addon-actions';
 
-import { FlexContainer, Col } from '../../src/Components/FlexGrid';
-import Row from '../../src/Components/Grid/Row';
+import { FlexContainer, Row, Col } from '../../src/Components/FlexGrid';
 
 storiesOf('Template/Grid', module)
   .add('Flex Grid', () =>

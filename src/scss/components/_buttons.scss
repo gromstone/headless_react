@@ -122,12 +122,24 @@
 
   &[class*="btn-outline--"] {
     padding-top: .4rem;
-    padding-bottom: .7rem;
+    padding-bottom: .4rem;
 
     &.btn--sm {
-      padding-top: .4rem;
-      padding-bottom: .4rem;
+      padding-top: .28rem;
+      padding-bottom: .28rem;
     }
+
+    &.btn--md {
+      padding-top: .5rem;
+      padding-bottom: .5rem;
+    }
+
+    &.btn--lg {
+      padding-top: .62rem;
+      padding-bottom: .62rem;
+    }
+
+    //todo add more styles
   }
 
 }

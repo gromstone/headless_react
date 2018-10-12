@@ -1,0 +1,64 @@
+.view {
+  cursor: default;
+  position: relative;;
+  overflow: hidden;
+
+  .mask {
+    background-attachment: fixed;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%
+  }
+
+  img, video {
+    display: block;
+    position: relative;
+  }
+}
+
+.overlay {
+
+  .mask {
+    opacity: 0;
+    transition: $transition__basic;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+}
+
+$patterns: (
+  1: "01",
+  2: "02",
+  3: "03",
+  4: "04",
+  5: "05",
+  6: "06",
+  7: "07",
+  8: "08",
+  9: "09"
+);
+
+@each $key, $fl in $patterns {
+  .pattern-#{$key} {
+    background: url("#{$assets-loc}overlays/#{$fl}.png")
+  }
+}
+
+@each $color_name, $color in $overlay-colors {
+  .rgba-#{$color_name}-gleam,.rgba-#{$color_name}-gleam:after {
+    background-color: rgba($color, .2)
+  }
+
+  .rgba-#{$color_name}-shine,.rgba-#{$color_name}-shine:after {
+    background-color: rgba($color, .4)
+  }
+
+  .rgba-#{$color_name}-bright,.rgba-#{$color_name}-bright:after {
+    background-color: rgba($color, .7)
+  }
+}

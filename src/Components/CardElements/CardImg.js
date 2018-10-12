@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classname';
 
-import Mask from '../StyleElements/Mask';
-import View from '../StyleElements/View';
+import { Mask, View } from '../StyleElements';
+
 
 class CardImg extends Component {
   state = {
@@ -12,15 +12,13 @@ class CardImg extends Component {
 
   static propTypes = {
     tag: PropTypes.oneOfType([PropTypes.func,PropTypes.string]),
-    cascade: PropTypes.bool,
     className: PropTypes.string
   };
 
   static defaultProps = {
     tag: 'img',
     hover: false,
-    cascade: false,
-    overlay: 'light-white'
+    overlay: 'white-gleam'
   };
 
   handleClick(e){
@@ -36,20 +34,20 @@ class CardImg extends Component {
   render(){
 
     let {
-      tag: Tag, overlay, top, hover, cascade, className, ...attributes
+      tag: Tag, overlay, top, hover, className, ...attributes
     } = this.props;
 
     const classes = classNames(
-      'card-img-top',
+      top && 'card-img--top',
       className
     )
 
-    const imgcomponent = <Tag {...attributes} className={classes} />
+    let imgcomponent = <Tag {...attributes} className={classes} />
 
     if( this.props.src ){
-      return (
-        <View hover={this.props.hover} cascade={this.props.cascade}>
-          <div className="" onMouseDown={this.handleClick.bind(this)} onTouchStart={this.handleClick.bind(this)}>
+      imgcomponent = (
+        <View hover={this.props.hover}>
+          <div className={classes} onMouseDown={this.handleClick.bind(this)} onTouchStart={this.handleClick.bind(this)}>
             { imgcomponent }
             <Mask overlay={overlay}/>
           </div>

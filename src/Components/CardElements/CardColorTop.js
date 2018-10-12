@@ -2,14 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classname';
 
-class Mask extends Component {
+class CardColorTop extends Component {
 
   static propTypes = {
     tag: PropTypes.oneOfType([PropTypes.func,PropTypes.string]),
-    overlay: PropTypes.string,
-    pattern: PropTypes.number,
-    className: PropTypes.string,
-    children: PropTypes.node
+    className: PropTypes.string
   };
 
   static defaultProps = {
@@ -19,13 +16,13 @@ class Mask extends Component {
   render(){
 
     let {
-      tag: Tag, overlay, pattern, className, children, ...attributes
+      tag: Tag, color, gradient, className, ...attributes
     } = this.props;
 
     const classes = classNames(
-      'mask',
-      pattern && `pattern-${pattern}`,
-      overlay && `rgba-${overlay}`,
+      'car-top',
+      color && color + '--color',
+      gradient && gradient + '--gradient',
       className
     )
 
@@ -36,4 +33,4 @@ class Mask extends Component {
 
 }
 
-export default Mask;
+export default CardColorTop;

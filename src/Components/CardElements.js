@@ -1,13 +1,17 @@
 import CardHeader from './CardElements/CardHeader';
-import CardFooter from './CardElements/CardFooter';
+import CardColorTop from './CardElements/CardColorTop';
+import CardImg from './CardElements/CardImg';
+import CardTitle from './CardElements/CardTitle';
 import CardBody from './CardElements/CardBody';
 import CardContent from './CardElements/CardContent';
-import CardImg from './CardElements/CardImg';
+import CardFooter from './CardElements/CardFooter';
 
 export {
     CardHeader,
-    CardFooter,
+    CardColorTop,
+    CardImg,
+    CardTitle,
     CardBody,
     CardContent,
-    CardImg,
+    CardFooter,
 }

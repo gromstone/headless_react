@@ -13,7 +13,6 @@ class CardFooter extends Component {
     mute: PropTypes.bool,
     transparent: PropTypes.bool,
     className: PropTypes.string,
-    children: PropTypes.node
   };
 
   static defaultProps = {
@@ -23,7 +22,7 @@ class CardFooter extends Component {
   render(){
 
     let {
-      tag: Tag, color, text, border, small, mute, transparent, className, children, ...attributes
+      tag: Tag, color, text, border, small, mute, transparent, className, ...attributes
     } = this.props;
 
     const classes = classNames(
@@ -37,15 +36,16 @@ class CardFooter extends Component {
       className
     )
 
-    const component = <Tag {...attributes} className={classes} />
+    let footercomponent = <Tag {...attributes} className={classes}> { this.props.children }</Tag>
 
     if(small){
-      (<Tag {...attributes} className={classes}>
-        <small>{ children }</small>
-      </Tag>)
+      footercomponent = (
+        <Tag {...attributes} className={classes}>
+          <small>{ this.props.children }</small>
+        </Tag>)
     }
 
-    return component;
+    return footercomponent;
   }
 
 }

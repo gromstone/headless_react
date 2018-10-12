@@ -6,8 +6,7 @@ class Card extends Component {
 
   static propTypes = {
     tag: PropTypes.oneOfType([PropTypes.func,PropTypes.string]),
-    color: PropTypes.string,
-    border: PropTypes.string,
+    text: PropTypes.string,
     className: PropTypes.string,
   };
 
@@ -18,20 +17,18 @@ class Card extends Component {
   render(){
 
     let {
-      tag: Tag, cascade, wide, narrow, testimonial, personal, news, color, text, border, className, ...attributes
+      tag: Tag, cascade, reverse, review, personal, testimonial, blog, text, className, ...attributes
     } = this.props;
 
     const classes = classNames(
       'card',
       cascade && 'card-cascade',
-      color && color,
-      wide && 'card-cascade wide',
-      narrow && 'card-cascade narrow',
-      testimonial && 'card-testimonial',
+      reverse && 'card-cascade reverse',
+      review && 'card-review',
+      blog && 'card-blog',
       personal && 'card-personal',
-      news && 'card-news',
-      text && text + 'text',
-      border && 'border-' + border,
+      testimonial && 'card-testimonial',
+      text && text + '-text-color',
       className
     )
 

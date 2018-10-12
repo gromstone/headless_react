@@ -54,6 +54,7 @@ $shadow-extra:             0 8px 18px rgba(0,0,0, .2), 0 6px 20px rgba(0,0,0, .1
 
 //border
 $border__std:              1px solid $color__bgGrey--light;
+
 $border__radius:           .3rem !default;
 $border__round:            10em !default;
 $border__circle:           50% !default;
@@ -69,6 +70,8 @@ $hr-dark:                  darken($color__default, 2%) !default;
 $hr-margin-x:              .5rem !default;
 $hr-margin-y:              2.5rem !default;
 $hr-heigth-x:              2px !default;
+
+$assets-loc:               '../assets/';
 
 //buttons
 $btn-basic-color:          $color__white !default;

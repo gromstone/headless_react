@@ -3,19 +3,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .xlHeadline {
-  font-size: calc-rem(56);
+  @include font-style(56, rokkitt, $color__primary, normal)
 }
 
 .lgHeadline {
-  font-size: calc-rem(34);
+  @include font-style(34, rokkitt, $color__primary, normal)
 }
 
 .mdHeadline {
-  font-size: calc-rem(28);
+  @include font-style(28, rokkitt, $color__primary, normal)
 }
 
 .smHeadline {
-  font-size: calc-rem(24);
+  @include font-style(24, rokkitt, $color__primary, normal)
 }
 
 .lg-copy {
@@ -30,8 +30,16 @@ h1, h2, h3, h4, h5, h6 {
   font-size: calc-rem(12);
 }
 
-.heading-color {
+.primary-text-color {
   color: $color__primary !important;
+}
+
+.secondary-text-color {
+  color: $color__secondary !important;
+}
+
+.optional-text-color {
+  color: $color__optional !important;
 }
 
 .inactive {

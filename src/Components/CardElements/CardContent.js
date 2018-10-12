@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classname';
 
-class CardFooter extends Component {
+class CardContent extends Component {
 
   static propTypes = {
     tag: PropTypes.oneOfType([PropTypes.func,PropTypes.string]),
     small: PropTypes.bool,
     mute: PropTypes.bool,
     className: PropTypes.string,
-    children: PropTypes.node
   };
 
   static defaultProps = {
@@ -19,7 +18,7 @@ class CardFooter extends Component {
   render(){
 
     let {
-      tag: Tag, small, mute, className, children, ...attributes
+      tag: Tag, small, mute, className, ...attributes
     } = this.props;
 
     const classes = classNames(
@@ -28,12 +27,13 @@ class CardFooter extends Component {
       className
     )
 
-    const textcomponent = <Tag {...attributes} className={classes} />
+    let textcomponent = <Tag {...attributes} className={classes}> { this.props.children } </Tag>
 
     if(small){
-      (<Tag {...attributes} className={classes}>
-        <small>{ children }</small>
-      </Tag>)
+      textcomponent = (
+        <Tag {...attributes} className={classes}>
+          <small>{ this.props.children }</small>
+        </Tag>)
     }
 
     return textcomponent;
@@ -41,4 +41,4 @@ class CardFooter extends Component {
 
 }
 
-export default CardFooter;
+export default CardContent;

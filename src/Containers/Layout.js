@@ -4,17 +4,26 @@ import { Router, Switch, Route } from "react-router-dom";
 //import { ThemeProvider } from "styled-components";
 //import { amazon, coolblue, airbnb } from '../../utils/themes';
 
-import { FlexContainer } from '../Components/FlexGrid'
+import { FlexContainer, Row, Col } from '../Components/FlexGrid'
 import Header from "../Components/Header";
 import Content from "../Components/Content";
 import Footer from "../Components/Footer";
 
+import { Flipper } from '../Components/StyleElements';
 import Card from '../Components/Card';
-import { CardHeader, CardFooter, CardBody, CardContent, CardImg } from '../Components/CardElements';
+import { CardHeader, CardImg, CardTitle, CardBody, CardContent, CardFooter } from '../Components/CardElements';
 
 import Button from "../Components/Button";
 
 class Layout extends Component {
+  state = {
+    flipped: false
+  }
+  flippedhHandler = this.flippedhHandler.bind(this)
+
+  flippedhHandler(){
+    this.setState({flipped: !this.state.flipped})
+  }
 
   render() {
     return (
@@ -28,17 +37,32 @@ class Layout extends Component {
               {/*
                   <Route exact path="/about" component={About} />
               */}
-              <Card>
-                <CardImg cascade src={"https://images.freeimages.com/images/large-previews/1ad/tractor-2-1386664.jpg"} />
-                <CardBody cascade>
-                  <Button
-                    active={false}
-                    size={'sm'}
-                    color={'primary'}
-                    children={'I\'m a button'}
-                  />
-                </CardBody>
-              </Card>
+              <Row>
+                <Col auto />
+                <Col sm={4} >
+                  <Flipper flipped={this.state.flipped} onClick={this.flippedhHandler}>
+                    <Card personal className="face front">
+                      <CardImg top className={'img-fluid'} alt="tractor image" src="https://images.freeimages.com/images/large-previews/1ad/tractor-2-1386664.jpg" />
+                      <CardBody>
+                        <CardContent>
+                          January's a great month to visit San Diego! (So are all the other months.) Want a list of every beach you can comfortably bask on in the middle of "winter?".
+                        </CardContent>
+                        <p>click card to rotate</p>
+                      </CardBody>
+                    </Card>
+                    <Card personal className="face back">
+                      <CardBody>
+                        <h4>About Me</h4>
+                        <hr className="hr-underline"/>
+                        <CardContent>
+                          January's a great month to visit San Diego! (So are all the other months.) Want a list of every beach you can comfortably bask on in the middle of "winter?".
+                        </CardContent>
+                      </CardBody>
+                    </Card>
+                  </Flipper>
+                </Col>
+                <Col auto />
+              </Row>
             </Content>
           </Switch>
           <Footer />

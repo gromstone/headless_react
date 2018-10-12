@@ -10,6 +10,17 @@ $colors: map-merge((
   "warning" :   $color__warning,
 ), $colors);
 
+$overlay-colors: () !default;
+$overlay-colors: map-merge((
+  "orange" :    $color__secondary,
+  "blue" :      $color__primary--light,
+  "success":    $color__success,
+  "info" :      $color__info,
+  "white":      $color__white,
+  "black":      $color__black,
+), $overlay-colors);
+
+
 @function alter-set-text-color($color) {
   @if (lightness($color) > 80) {
     @return $color__black;

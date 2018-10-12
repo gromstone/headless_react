@@ -13,6 +13,7 @@ class View extends Component {
     hover: PropTypes.bool,
     round: PropTypes.bool,
     cascade: PropTypes.bool,
+    className: PropTypes.string,
     children: PropTypes.node
   };
 
@@ -48,7 +49,7 @@ class View extends Component {
     let srcview;
     if(this.props.src){
       srcview = {
-        backgroundImage:`url(${this.props.src})`,
+        backgroundImage:'url(' + this.props.src + '})',
         backgroundSize: 'cover',
         width: '100%',
         heigth: '100%'

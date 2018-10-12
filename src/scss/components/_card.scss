@@ -1,0 +1,132 @@
+.card {
+  background-color: $color__white;
+  background-clip: border-box;
+  border-radius: $border__radius;
+  box-shadow: $shadow-std;
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+  min-width: 0;
+  word-wrap: break-word;
+
+  &-blog {
+
+    .card-title {
+      color: $color__secondary;
+    }
+
+    .card-footer {
+      align-items: flex-end;
+      display: flex;
+      flex-direction: column;
+
+      .btn {
+        color: $color__primary!important;
+        text-decoration: none;
+        padding-right: 0;
+
+        &:hover {
+          text-decoration: underline;
+          color: darken($color__primary, 10%)!important;
+        }
+      }
+    }
+  }
+
+  .view {
+    border-radius: $border__radius $border__radius 0 0;
+  }
+
+  &-cascade {
+    position: relative;
+
+    &.reverse {
+      box-shadow: none;
+      background-color: transparent;
+
+      .view {
+        border-radius: $border__radius;
+        box-shadow: $shadow-std;
+        margin-left: .8rem;
+        margin-right: .8rem;
+      }
+
+      .card-body {
+        background-color: rgba($color__white, .6);
+        border-radius: .2rem;
+        box-shadow: $shadow-std;
+        margin-top: -1.125rem;
+        z-index: 3;
+
+        .card-title {
+          font-weight: 700;
+        }
+      }
+
+      .card-footer{
+
+      }
+
+    }
+
+  }
+
+  &-review {
+    background-size: cover;
+    text-align: center;
+
+    .card-body {
+      padding-left: 2.2rem;
+      padding-right: 2.2rem;
+    }
+
+  }
+
+  &-personal {
+    &.front {
+
+    }
+
+    &.back {
+      
+    }
+  }
+
+  &-img--top {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+
+    &[class*="rgba-"]{
+      border-radius: .25rem;
+    }
+  }
+
+
+  &-body {
+    padding: 1.125rem;
+
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 400;
+    }
+
+  }
+
+  &-title {
+    font-size: calc-rem(24);
+    font-family: $font-family--special;
+    margin-bottom: .75rem;
+    a {
+      transition: $transition__basic;
+      &:hover {
+        transition: $transition__basic;
+      }
+    }
+  }
+
+  &-text {
+    font-size: calc-rem(16);
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+}
