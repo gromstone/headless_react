@@ -2,20 +2,20 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Table of Contents
 
-- [ES6 React boilerplate with Webpack, Graphql, Storybook](#ES6 React boilerplate using Webpack)
-- [Starting the dev server](#Starting the dev server)
+- [ES6 React boilerplate with Webpack, Graphql, Storybook](#es6-react-boilerplate)
+- [Starting the dev server](#starting-the-dev-server)
 - [Folder Structure](#folder-structure)
-- [Available Commands](#Available Commands)
+- [Available Commands](#available-commands)
   - [npm start](#npm-start)
   - [npm storybook](#npm-storybook)
   - [npm test](#npm-test)
   - [npm run build](#npm-run-build)
-- [Production code](#Production code)
-- [Supported Browsers](#Supported Browsers)
+- [Production code](#production-code)
+- [Supported Browsers](#supported-browsers)
 - [Licence](#Licence)
 
 
-## ES6 React boilerplate using Webpack
+## ES6 React boilerplate
 
 React boilerplate with a Atom design styleguide . It includes:
 
