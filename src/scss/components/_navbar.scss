@@ -1,10 +1,106 @@
 .navbar {
+  align-items: center;
+  background-color: $color__primary;
   box-shadow: $shadow-extra;
+  display: flex;
   font-weight: 400;
+  justify-content: flex-start;
+  padding: .7rem;
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 
-  .nav-link {
-    display: block;
+  @media (max-width: $device--sm) {
+    flex-direction: column;
   }
 
-  
+  &-brand {
+    display: inline-block;
+    padding-left: .3rem;
+    padding-right: .3rem;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+
+  &-toggle {
+    align-self: flex-start;
+    background-color: transparent;
+    border: 0;
+    color: $color__white;
+    cursor: pointer;
+    font-size: calc-rem(22);
+    font-weight: 700;
+    line-height: 100%;
+    margin: 0;
+    padding: 8px;
+    outline: 0;
+    transform: rotate(90deg);
+
+    @media (min-width: $device--sm) {
+      display: none;
+    }
+
+    .navbar-icon {
+      display: inline-block;
+      vertical-align: middle;
+      height: 22px;
+      width: 22px;
+    }
+  }
+
+  .nav__item {
+    .nav__link {
+      display: block;
+      &.disabled {
+        pointer-events: none;
+      }
+      i {
+        padding-left: 6px;
+        padding-right: 6px;
+        @media (min-width: $device--md) {
+          padding-left: 3px;
+          padding-right: 3px;
+        }
+      }
+    }
+  }
+
+  &-nav {
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+    margin-left: auto;
+    margin-bottom: 0;
+    list-style: none;
+
+    @media (max-width: $device--sm) {
+      align-items: center;
+      flex-direction: column;
+      margin-left: 0;
+    }
+
+    .nav__item {
+      display: list-item;
+      transition: $transition__basic;
+
+      .nav__link {
+        color: $color__white!important ;
+        font-size: calc-rem(19);
+        display: inline-block;
+        vertical-align: middle;
+        transform: perspective(1px) translateZ(0);
+        text-decoration: none;
+        padding: .5rem 0;
+        padding-right: 12px;
+        padding-left: 12px;
+
+        &:before {
+          content: "";
+          background-color: $color__secondary--light;
+        }
+      }
+    }
+  }
 }

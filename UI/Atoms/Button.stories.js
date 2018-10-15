@@ -17,7 +17,8 @@ storiesOf('Atom/Button', module)
       color={select("Color",['primary','success','secondary','info','danger', 'optional', 'default'], 'primary')}
       gradient={text("Gradient", '')}
       role={text("Role", 'button')}
-      type={text("Type", '')}
+      type={text("Type", 'button')}
+      href={text("href", '')}
       disabled={boolean("Disabled", false)}
       outline={boolean("Outline", false)}
       rounded={boolean("Rounded", false)}

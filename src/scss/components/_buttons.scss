@@ -3,15 +3,33 @@
   border-radius: $border__radius;
   color: $btn-basic-color;
   cursor: pointer;
-  font-family: $font-family--all;
+  font-weight: 700;
+  letter-spacing: .1rem;
   text-transform: uppercase;
+  transform: perspective(1px) translateZ(0);
+  transition-property: color;
+  transition-duration: .3s;
   white-space: normal;
   word-wrap: break-word;
   @include btn-size($btn-basic-padding-x, $btn-basic-padding-y, $btn-basic-font);
 
+  //Part of horizontal hover
+  &:before {
+    content: "";
+    transform: scaleX(0);
+    transform-origin: 50%;
+    transition-property: transform;
+    transition-duration: .3s;
+    transition-timing-function: ease-out;
+  }
+
   &:hover, &:active, &:focus {
     box-shadow: $shadow-extra;
     outline: 0;
+    &:before {
+      transform: scaleX(1);
+      border-radius: $border__radius;
+    }
   }
 
   &:disabled, &.disabled {
@@ -44,11 +62,30 @@
     background: transparent;
     box-shadow: none;
     border: 0;
+    border-radius: 0;
     color: inherit !important;
+    font-family: $font-family--all;
+
+    &:before {
+  		position: absolute;
+  		left: 51%;
+  		right: 51%;
+  		bottom: 0;
+  		height: 4px;
+      background: $color__primary;
+      transform-origin: 0;
+  		transition-property: left, right;
+  		transition-duration: .3s;
+  		transition-timing-function: ease-out;
+  	}
 
     &:hover , &:focus, &:active {
-      text-decoration: underline;
       box-shadow: none;
+
+      &:before {
+  			left: 0;
+  			right: 0;
+  		}
     }
 
     &:active {
@@ -75,6 +112,9 @@
 
   &--round {
     border-radius: $border__round;
+    &:before {
+      border-radius: $border__round!important;
+    }
   }
 
   &--circle {
@@ -82,6 +122,9 @@
     height: 50px;
     width: 50px;
     padding: 0;
+    &:before {
+      border-radius: $border__circle!important;
+    }
   }
 
   &--float {
@@ -139,7 +182,7 @@
       padding-bottom: .62rem;
     }
 
-    //todo add more styles
+    //TODO add more styles
   }
 
 }

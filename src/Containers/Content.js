@@ -1,5 +1,5 @@
 import React from "react";
-import { FlexContainer, Row, Col } from './FlexGrid';
+import { FlexContainer, Row, Col } from '../Components/FlexGrid';
 
 const Content = (props) => (
   <Row>

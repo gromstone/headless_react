@@ -42,7 +42,7 @@ class NavLink extends Component {
     let { active, className, to, disabled, children, ...attributes } = this.props;
 
     const classes = classNames(
-      'nav-link',
+      'nav__link',
       disabled ? 'disabled' : '',
       active && 'active',
       className

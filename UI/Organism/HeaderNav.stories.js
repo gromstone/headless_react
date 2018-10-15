@@ -4,23 +4,27 @@ import { storiesOf } from '@storybook/react';
 import { select, text, boolean, number } from '@storybook/addon-knobs/react';
 import { action } from '@storybook/addon-actions';
 
-import { Navbar, NavBrand, NavbarUl, NavLi } from '../../src/Components/Nav';
+import { Navbar, NavBrand, NavToggle, NavbarUl, NavLi } from '../../src/Components/NavElements';
 
 storiesOf('Organism/Navigation', module)
   .add('Navigation', () =>
       <Navbar >
+        <NavToggle/>
         <NavBrand>
           Logo
         </NavBrand>
         <NavbarUl>
           <NavLi>
-            <a href="/">Home</a>
+            <a className="nav__link btn--flat" href="/">Home</a>
           </NavLi>
           <NavLi>
-            <a href="/about">{text('Link name','about')}</a>
+            <a className="nav__link btn--flat" href="/about">About</a>
           </NavLi>
           <NavLi>
-            <a href="/blog">Blog</a>
+            <a className="nav__link btn--flat" href="/blog">Blog</a>
+          </NavLi>
+          <NavLi>
+            <a className="nav__link btn--flat" href="/contact">Contact</a>
           </NavLi>
         </NavbarUl>
       </Navbar>

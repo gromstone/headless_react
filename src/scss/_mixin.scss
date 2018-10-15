@@ -26,14 +26,31 @@
 
 @mixin make-nav( $tcolor, $color, $color-1, $bgcolor) {
   .navbar-nav {
+    .nav__item {
+      .nav__link {
+        &.disabled {
+          color: $tcolor;
 
-    .nav-link {
-
-      &.disabled {
+          &:hover {
+            color: $tcolor;
+          }
+        }
+      }
+    }
+  }
+  .navbar-nav {
+    .nav__item {
+      .nav__link {
         color: $tcolor;
-
+        transition: $transition__basic;
         &:hover {
-          color: $tcolor
+          color:$color-1;
+        }
+      }
+      &.active>.nav__link{
+        background-color: $bgcolor;
+        &:hover {
+          color: $color;
         }
       }
     }
@@ -56,7 +73,20 @@
     }
   }
 
-  padding: $pd-y $pd-x;
+  padding: $padding-small-y $padding-small-x;
+};
+
+@mixin box-shadow($left, $top, $radius, $color) {
+	box-shadow: $left $top $radius $color;
+	-webkit-box-shadow: $left $top $radius $color;
+	-moz-box-shadow: $left $top $radius $color;
+};
+
+@mixin make-badge($name, $color){
+  .badge--#{$name} {
+    background-color: $color !important;
+    color: alter-set-text-color($color) !important;
+  }
 };
 
 @mixin btn-size($pd-x,$pd-y,$font-size) {
@@ -66,8 +96,25 @@
 
 @mixin make-button($name, $color){
   .btn--#{$name} {
+    //Need it for hover effects
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    position: relative;
+
     background-color: $color !important;
     color: alter-set-text-color($color) !important;
+    font-family: $font-family--all;
+
+    &:before{
+      background: darken($color, 10%);
+      bottom: 0;
+      left: 0;
+      top: 0;
+      right: 0;
+      position: absolute;
+      z-index: -1;
+    }
 
     &:hover{
       background-color: lighten($color, 5%)!important;
@@ -86,6 +133,7 @@
     background-color: transparent !important;
     border: 2px solid $color !important;
     color: $color !important;
+    font-family: $font-family--all;
 
     &:focus, &:active, &:active, &.active {
       background-color: transparent !important;
@@ -98,21 +146,21 @@
 @mixin make-float-button($fs, $h, $w){
   height: $h;
   width: $w;
-
   i {
     font-size: $fs;
   }
 };
 
-@mixin make-badge($name, $color){
-  .badge--#{$name} {
-    background-color: $color !important;
-    color: alter-set-text-color($color) !important;
-  }
-};
+/* Grow Shadow */
+@mixin grow-shadow {
+  transform: perspective(1px) translateZ(0);
+	transition-duration: .3s;
+	transition-property: "box-shadow, transform";
 
-@mixin box-shadow($left, $top, $radius, $color) {
-	box-shadow: $left $top $radius $color;
-	-webkit-box-shadow: $left $top $radius $color;
-	-moz-box-shadow: $left $top $radius $color;
-};
+	&:hover,
+	&:focus,
+	&:active {
+		box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+		transform: scale(1.1);
+	}
+}

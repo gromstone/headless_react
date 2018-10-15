@@ -8,7 +8,7 @@ class Button extends Component {
   }
 
   onClick = this.onClick.bind(this);
-  
+
   static propTypes = {
     tag: PropTypes.string,
     active: PropTypes.bool,

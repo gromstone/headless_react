@@ -5,7 +5,7 @@ import classNames from 'classname';
 class NavBrand extends Component {
 
   static propTypes = {
-    tag: PropTypes.onOfType([PropTypes.func, PropTypes.string]),
+    tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
     className: PropTypes.string,
     children: PropTypes.node,
   };
@@ -17,7 +17,7 @@ class NavBrand extends Component {
   render(){
 
     let {
-      tag: Tag, className, ...attributes
+      tag: Tag, className, children, ...attributes
     } = this.props;
 
     const classes = classNames(

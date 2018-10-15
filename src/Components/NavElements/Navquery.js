@@ -1,6 +1,6 @@
 import React from "react";
 
-import { NavbarUl, NavLink } from '../Nav';
+import { NavbarUl, NavLi, NavLink } from '../NavElements';
 
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
@@ -11,15 +11,16 @@ const Link = ({ data: { loading, error, navigations } }) => {
         return(
             <NavbarUl>
               { navigations[0].linkName.map((link) => (
-                <NavLink
-                  key={link}
-                  exact
-                  to={link ==='Home' ? '/' : `/${link}`}
-                  className='nav-link'
-                  activeClassName='nav-link--isActive'
-                >
-                  {link}
-                </NavLink>
+                <NavLi key={link}>
+                  <NavLink
+                    exact
+                    to={link ==='Home' ? '/' : `/${link}`}
+                    className='nav__link btn--flat'
+                    activeClassName='nav__link--isActive'
+                  >
+                    {link}
+                  </NavLink>
+                </NavLi>
               )) }
             </NavbarUl>
         )

@@ -5,9 +5,9 @@ import { Router, Switch, Route } from "react-router-dom";
 //import { amazon, coolblue, airbnb } from '../../utils/themes';
 
 import { FlexContainer, Row, Col } from '../Components/FlexGrid'
-import Header from "../Components/Header";
-import Content from "../Components/Content";
-import Footer from "../Components/Footer";
+import Header from "../Containers/Header";
+import Content from "../Containers/Content";
+import Footer from "../Containers/Footer";
 
 import { Flipper } from '../Components/StyleElements';
 import Card from '../Components/Card';
