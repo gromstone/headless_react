@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Spinner from '../Components/UI/Spinner/Spinner';
+import { Spinner } from '../Components/StyleElements';
 
 const loadCheck = (propName) => (WrappedComponent) => {
     return class loadCheck extends Component {
