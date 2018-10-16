@@ -18,17 +18,23 @@ class Collapse extends Component {
   }
 
   static propTypes = {
-    tag: PropTypes.string,
-    zoom: PropTypes.bool,
-    hover: PropTypes.bool,
-    round: PropTypes.bool,
-    cascade: PropTypes.bool,
+    isOpen: PropTypes.bool,
+    onOpen: PropTypes.func,
+    onClose: PropTypes.func,
+    delay: PropTypes.oneOfType([
+      PropTypes.shape({show: PropTypes.number, hide: PropTypes.number,}),
+      PropTypes.number
+    ]),
+    navbar: PropTypes.bool,
     className: PropTypes.string,
     children: PropTypes.node
   };
 
   static defaultProps = {
-    tag: 'div'
+    isOpen: false,
+    delay: DELAYS,
+    onOpen: () => {},
+    onClose: () => {}
   };
 
   componentWillReceiveProps(nextProps) {
@@ -96,29 +102,44 @@ class Collapse extends Component {
 
   render(){
 
-    let {
-      tag: Tag, src, zoom, hover, round, cascade, className, children, ...attributes
-    } = this.props;
+    let { isOpen, onOpen, onClose, delay, navbar, className, children, ...attributes } = this.props;
+    let collapseClasses;
+
+    const { collapse, height } = this.state;
+    switch (collapse) {
+      case SHOW:
+        collapseClasses = 'collapsing'
+        break;
+      case SHOWN:
+        collapseClasses = 'collapse--show'
+        break;
+      case HIDE:
+        collapseClasses = 'collapsing'
+        break;
+      case HIDDEN:
+        collapseClasses = 'collapse'
+        break;
+      default:
+        collapseClasses = 'collapse'
+    }
 
     const classes = classNames(
-      'view',
-      zoom && 'zoom',
-      round && 'rounded',
-      hover && 'overlay',
-      cascade && 'view-cascade',
+      collapseClasses
+      navbar && 'navbar--collapse'
       className
     )
 
+    let style = height === null ? null : { height };
+
     return(
-      <Tag
+      <div
         { ...attributes }
+        style={{ ...attributes.style, ...style}}
         className={ classes }
-        onMouseDown={ this.handleClick.bind(this) }
-        onTouchStart={ this.handleClick.bind(this) }
-        style={ srcview }
+        ref={ (c) => {this.element = c;} }
       >
         { children }
-      </Tag>
+      </div>
     );
   }
 

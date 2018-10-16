@@ -15,16 +15,16 @@ storiesOf('Organism/Navigation', module)
         </NavBrand>
         <NavbarUl>
           <NavLi>
-            <a className="nav__link btn--flat" href="/">Home</a>
+            <a className="nav__link btn--flat" href="/"><i className=" fa fa-home "></i> Home</a>
           </NavLi>
           <NavLi>
             <a className="nav__link btn--flat" href="/about">About</a>
           </NavLi>
           <NavLi>
-            <a className="nav__link btn--flat" href="/blog">Blog</a>
+            <a className="nav__link btn--flat" href="/blog"><i className=" fa fa-comment "></i> Blog</a>
           </NavLi>
           <NavLi>
-            <a className="nav__link btn--flat" href="/contact">Contact</a>
+            <a className="nav__link btn--flat" href="/contact"><i className=" fa fa-envelope "></i>Contact</a>
           </NavLi>
         </NavbarUl>
       </Navbar>
