@@ -4,14 +4,15 @@ import { Router, Switch, Route } from "react-router-dom";
 //import { ThemeProvider } from "styled-components";
 //import { amazon, coolblue, airbnb } from '../../utils/themes';
 
-import { FlexContainer, Row, Col } from '../Components/FlexGrid'
-import Header from "../Containers/Header";
-import Content from "../Containers/Content";
-import Footer from "../Containers/Footer";
+import Aux from "../hoc/aux";
 
-import { Flipper } from '../Components/StyleElements';
-import Card from '../Components/Card';
-import { CardHeader, CardImg, CardTitle, CardBody, CardContent, CardFooter } from '../Components/CardElements';
+import Header from "../Containers/Header";
+import Footer from "../Containers/Footer";
+import Content from "../Containers/Content";
+
+import { HeaderHero, Flipper } from '../Components/StyleElements';
+import { FlexContainer, Row, Col } from '../Components/FlexGrid'
+import { Card, CardHeader, CardImg, CardTitle, CardBody, CardContent, CardFooter } from '../Components/CardElements';
 
 import Button from "../Components/Button";
 
@@ -27,13 +28,21 @@ class Layout extends Component {
 
   render() {
     return (
-        <FlexContainer fluid>
-          {/*
-              <ThemeProvider theme={airbnb}></ThemeProvider>
-          */}
+      <Aux>
+        {/*
+            <ThemeProvider theme={airbnb}></ThemeProvider>
+        */}
           <Header />
-          <Switch>
+          //Main container
+          <FlexContainer fluid tag={'main'}>
+
+            <HeaderHero
+              home
+              bgcolor={'secondary'}
+            />
+
             <Content>
+
               {/*
                   <Route exact path="/about" component={About} />
               */}
@@ -64,9 +73,12 @@ class Layout extends Component {
                 <Col auto />
               </Row>
             </Content>
-          </Switch>
+
+
+          </FlexContainer>
+
           <Footer />
-        </FlexContainer>
+      </Aux>
     );
   }
 }

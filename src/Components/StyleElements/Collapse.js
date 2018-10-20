@@ -12,8 +12,8 @@ const DELAYS = {
   hide: 350
 }
 class Collapse extends Component {
-  state ={
-    collapse: props.isOpen ? SHOWN : HIDDEN,
+  state = {
+    collapse: this.props.isOpen ? SHOWN : HIDDEN,
     height: null
   }
 
@@ -46,7 +46,7 @@ class Collapse extends Component {
         collapse: SHOW
       }, () => {
         this.setState({ height: this.getHeight() });
-        this.transitionTag = setTimeOut( () => {
+        this.transitionTag = setTimeout( () => {
           this.setState({
             collapse:SHOWN,
             height: null
@@ -66,7 +66,7 @@ class Collapse extends Component {
         })
       });
 
-      this.transitionTag = setTimeOut( () => {
+      this.transitionTag = setTimeout( () => {
         this.setState({
           collapse:HIDDEN,
           height:null
@@ -124,8 +124,8 @@ class Collapse extends Component {
     }
 
     const classes = classNames(
-      collapseClasses
-      navbar && 'navbar--collapse'
+      collapseClasses,
+      navbar && 'navbar--collapse',
       className
     )
 

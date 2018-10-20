@@ -12,7 +12,7 @@ storiesOf('Molecules/Navbar', module)
   .add('Navigation list', () =>
       <Navbar >
         <NavToggle />
-        <NavbarUl>
+        <NavbarUl left>
           <NavLi>
             <a className="nav__link btn--flat" href="/">Home</a>
           </NavLi>

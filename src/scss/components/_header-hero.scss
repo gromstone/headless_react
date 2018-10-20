@@ -1,0 +1,39 @@
+.header-hero {
+  display: block;
+  margin-top: 42px;
+  width: 100%;
+}
+
+.hero {
+
+  &--home {
+    height: 150px;
+    min-height: 150px;
+  }
+
+  &--blog {
+    display: flex;
+    height: 300px;
+    min-height: 300px;
+    justify-content: center;
+  }
+
+  &--contact {
+    height: 200px;
+    min-height: 200px;
+  }
+
+  &--img {
+    width: 100%;
+    height: auto;
+
+    @media (min-width: $device--sm) {
+      height: 300px;
+      width: 70%;
+    }
+  }
+}
+
+@each $hero-name, $color_val in $colors {
+  @include make-hero($hero-name, $color_val);
+}

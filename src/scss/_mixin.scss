@@ -151,6 +151,14 @@
   }
 };
 
+
+@mixin make-hero($name, $color){
+  .hero--#{$name} {
+    background-color: $color !important;
+  }
+}
+
+
 /* Grow Shadow */
 @mixin grow-shadow {
   transform: perspective(1px) translateZ(0);

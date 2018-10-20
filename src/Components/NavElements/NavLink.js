@@ -9,7 +9,7 @@ class NavLink extends Component {
     cursorPos:{}
   };
 
-  handleClick = this.handleClick.bind(this);
+  clickHandler = this.clickHandler.bind(this);
 
   static propTypes = {
     active: PropTypes.bool,
@@ -19,7 +19,7 @@ class NavLink extends Component {
     children: PropTypes.node
   }
 
-  handleClick(e){
+  clickHandler(e){
     if(!this.props.disabled){
       let cursorPos = {
         top: e.clientY,
@@ -51,7 +51,7 @@ class NavLink extends Component {
     return (
       <Link
         className={ classes }
-        onClick={ this.onClick }
+        onClick={ this.clickHandler }
         to={ this.props.to }
         { ...attributes }
       >

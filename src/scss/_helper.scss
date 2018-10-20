@@ -1,0 +1,27 @@
+.push-content-wrap {
+  padding-top: 66px;
+}
+
+.ml-auto {
+  margin-left: auto!important;
+}
+.mr-auto {
+  margin-right: auto!important;
+}
+
+.collapse {
+  display: flex;
+  flex-grow: 1;
+}
+
+.hr-underline {
+  border-top: 1px solid #e4e4e4;
+  border-bottom: 1px solid #fff;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.img-fluid, .video-fluid  {
+  width: 100%;
+  height: auto;
+}

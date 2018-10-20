@@ -13,7 +13,7 @@ storiesOf('Organism/Navigation', module)
         <NavBrand>
           Logo
         </NavBrand>
-        <NavbarUl>
+        <NavbarUl left>
           <NavLi>
             <a className="nav__link btn--flat" href="/"><i className=" fa fa-home "></i> Home</a>
           </NavLi>

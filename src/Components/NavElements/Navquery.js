@@ -1,32 +1,42 @@
-import React from "react";
-
-import { NavbarUl, NavLi, NavLink } from '../NavElements';
-
+import React, { Component } from "react";
 import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
+import { Query } from 'react-apollo';
 
-const Link = ({ data: { loading, error, navigations } }) => {
-    if (error) return <h1>Error fetching the post!</h1>
-    if (!loading) {
-        return(
-            <NavbarUl>
-              { navigations[0].linkName.map((link) => (
+import { NavLi, NavLink } from '../NavElements';
+import Aux from '../../hoc/aux';
+
+class Link extends Component {
+
+  render() {
+    console.log(this.props);
+    return (
+      <Query query={linksQuery}>
+        {({ loading, error, data }) => {
+          if (loading) return <div>Fetching</div>
+          if (error) return <div>Error</div>
+
+          const links = data.navigations[0].linkName;
+          return (
+            <Aux>
+              { links.map((link) => (
                 <NavLi key={link}>
                   <NavLink
                     exact
                     to={link ==='Home' ? '/' : `/${link}`}
                     className='nav__link btn--flat'
                     activeClassName='nav__link--isActive'
+                    onClick={this.onClick}
                   >
-                    {link}
+                    { link }
                   </NavLink>
                 </NavLi>
               )) }
-            </NavbarUl>
-        )
-    }
-
-    return <h2>Loading post...</h2>
+            </Aux>
+          )
+        }}
+      </Query>
+    )
+  }
 }
 
 export const linksQuery = gql`
@@ -36,4 +46,4 @@ export const linksQuery = gql`
       }
     }
 `
-export default graphql(linksQuery, {})(Link)
+export default Link

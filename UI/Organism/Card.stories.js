@@ -7,9 +7,8 @@ import { action } from '@storybook/addon-actions';
 import { FlexContainer, Row, Col } from '../../src/Components/FlexGrid';
 import Button from '../../src/Components/Button';
 
-import Card from '../../src/Components/Card';
 import { Flipper } from '../../src/Components/StyleElements';
-import { CardHeader, CardColorTop, CardImg, CardTitle, CardBody, CardContent, CardFooter } from '../../src/Components/CardElements';
+import { Card, CardHeader, CardColorTop, CardImg, CardTitle, CardBody, CardContent, CardFooter } from '../../src/Components/CardElements';
 
   storiesOf('Organism/Card', module)
   .add('Card', () =>

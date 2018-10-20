@@ -11,17 +11,20 @@ class Jumbotron extends Component {
   }
 
   static defaultProps = {
-    fluid: false 
+    fluid: false
   }
 
   render(){
-    let closeBtn;
 
-    const {className, fluid, children, ...attributes} = this.props;
-    const classes = classNames('jumbotron', fluid ? 'jumbotron--fluid' : false, className,)
+    let { className, fluid, children, ...attributes } = this.props;
+    const classes = classNames(
+      'jumbotron',
+      fluid ? 'jumbotron--fluid' : false,
+      className
+    );
 
     return(
-      <div { ...attributes } className={classes}> { children } </div>
+      <div { ...attributes } className={ classes }> { children } </div>
     );
   }
 }
