@@ -11,3 +11,25 @@
     width: 100%;
   }
 }
+
+.flyby {
+  margin-top: -60px;
+
+  .card-body {
+    background-color: $color__white;
+    box-shadow: $shadow-std;
+
+    h1 {
+      padding-bottom: 1rem;
+      @include font-style(40, rokkitt, $color__primary, normal)
+
+      @media (min-width: $device--sm) {
+        font-size: calc-rem(56);
+      }
+    }
+
+    p {
+      padding-bottom: 2rem;
+    }
+  }
+}

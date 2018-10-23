@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
-import { BrowserRouter } from "react-router-dom";
 import { ApolloClient } from 'apollo-client';
 import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { ApolloProvider } from 'react-apollo';
+import dotenv from 'dotenv';
 
 import Layout from './Containers/Layout';
 
-import './scss/index.scss'
+import './scss/index.scss';
 
-const GRAPHCMS_API = 'https://api-useast.graphcms.com/v1/cjlzh0opy003z01dm7v98ciqe/master'
+require('dotenv').config();
+console.log('API', process.env);
+
+const GRAPHCMS_API = process.env.REACT_APP_GRAPHCMS_API
 
 const client = new ApolloClient({
   link: new HttpLink({ uri: GRAPHCMS_API }),
@@ -17,17 +20,13 @@ const client = new ApolloClient({
 })
 
 class App extends Component {
-    render() {
-
-        return (
-          <BrowserRouter>
-            <ApolloProvider client={client}>
-              <Layout/>
-            </ApolloProvider>
-          </BrowserRouter>
-
-        );
-    }
+  render() {
+    return (
+      <ApolloProvider client={client}>
+        <Layout/>
+      </ApolloProvider>
+    );
+  }
 }
 
 export default App;

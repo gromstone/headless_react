@@ -29,7 +29,7 @@ class NavToggle extends Component {
 
     return(
       <Tag {...attributes} className={classes}>
-        { children || <span className="navbar-icon">|||</span>}
+        { children || <i className="fa fa-reorder "></i> }
       </Tag>
     );
   }

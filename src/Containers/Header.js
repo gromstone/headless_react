@@ -32,18 +32,19 @@ class Header extends Component {
     return (
       <FlexContainer tag={'header'} className='header'>
         <Navbar>
-          <NavToggle onClick={this.toggleHandler}/>
+          <NavToggle style={{display: this.state.collapsed ? 'none' : 'block' }} onClick={this.toggleHandler}/>
 
           <NavBrand>
             Logo
           </NavBrand>
-          <Collapse isOpen={this.state.collapsed}>
+          <Collapse isOpen={this.state.collapsed} navbar aria-expanded={ this.state.collapsed ? true : false }>
             <NavbarUl left>
               <Navquery onClick={this.clickHandler}/>
             </NavbarUl>
           </Collapse>
 
         </Navbar>
+        { collapsed }
       </FlexContainer>
     )
   }

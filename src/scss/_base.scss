@@ -1,1 +1,31 @@
+.container {
+  width: 100%;
+  padding-left: (30px / 2);
+  padding-right: (30px / 2);
+  margin-left: auto;
+  margin-right: auto;
 
+  @media (min-width: $device--sm) {
+    width: 500px;
+  }
+
+  @media (min-width: $device--md) {
+    width: 720px;
+  }
+
+  @media (min-width: $device--lg) {
+    width: 950px;
+  }
+
+  @media (min-width: $device--xl) {
+    width: 1180px;
+  }
+}
+
+.collapse {
+  display: none;
+
+  &.show {
+    display: block;
+  }
+}

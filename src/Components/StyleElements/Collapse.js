@@ -8,8 +8,8 @@ const HIDE = "HIDE";
 const HIDDEN = "HIDDEN";
 
 const DELAYS = {
-  show: 350,
-  hide: 350
+  show: 400,
+  hide: 400
 }
 class Collapse extends Component {
   state = {

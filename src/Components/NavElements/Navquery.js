@@ -8,7 +8,7 @@ import Aux from '../../hoc/aux';
 class Link extends Component {
 
   render() {
-    console.log(this.props);
+
     return (
       <Query query={linksQuery}>
         {({ loading, error, data }) => {
@@ -22,12 +22,13 @@ class Link extends Component {
                 <NavLi key={link}>
                   <NavLink
                     exact
-                    to={link ==='Home' ? '/' : `/${link}`}
+                    to={ link === 'Home' ? '/' : `/${link}` }
                     className='nav__link btn--flat'
                     activeClassName='nav__link--isActive'
-                    onClick={this.onClick}
+                    onClick={this.props.onClick}
                   >
-                    { link }
+                    <i className={(link === 'Home') ? 'fa fa-home' : (link === 'Blog') ? 'fa fa-commenting' : 'fa fa-envelope'}></i>
+                      { link }
                   </NavLink>
                 </NavLi>
               )) }

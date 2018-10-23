@@ -1,6 +1,8 @@
 .card {
   background-color: $color__white;
   background-clip: border-box;
+  background-position: center;
+  background-size: cover;
   border-radius: $border__radius;
   box-shadow: $shadow-std;
   display: flex;
@@ -75,6 +77,10 @@
     background-size: cover;
     text-align: center;
 
+    .card-title {
+      background-color: rgba($color__white, .7)
+    }
+
     .card-body {
       padding-left: 2.2rem;
       padding-right: 2.2rem;
@@ -104,6 +110,7 @@
 
 
   &-body {
+    flex: 1 1 auto;
     padding: 1.125rem;
 
     h1, h2, h3, h4, h5, h6 {

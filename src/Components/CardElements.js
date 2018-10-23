@@ -1,4 +1,4 @@
-import Card from './CardElements/CardHeader';
+import Card from './CardElements/Card';
 import CardHeader from './CardElements/CardHeader';
 import CardColorTop from './CardElements/CardColorTop';
 import CardImg from './CardElements/CardImg';

@@ -1,7 +1,10 @@
 .header-hero {
   display: block;
-  margin-top: 42px;
   width: 100%;
+
+  @media (min-width: $device--sm) {
+    margin-top: 42px;
+  }
 }
 
 .hero {
@@ -31,6 +34,13 @@
       height: 300px;
       width: 70%;
     }
+  }
+
+  .title {
+    color: $color__white;
+    font-family: $font-family--special;
+    font-size: 7rem;
+    text-shadow: 1px 1px 1px rgba(0,0,0, .6);
   }
 }
 

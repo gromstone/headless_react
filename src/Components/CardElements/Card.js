@@ -24,10 +24,10 @@ class Card extends Component {
       'card',
       cascade && 'card-cascade',
       reverse && 'card-cascade reverse',
-      review && 'card-review',
-      blog && 'card-blog',
-      personal && 'card-personal',
-      testimonial && 'card-testimonial',
+      review ? 'card-review' : '',
+      blog ? 'card-blog' : '',
+      personal ? 'card-personal' : '',
+      testimonial ? 'card-testimonial' : '',
       text && text + '-text-color',
       className
     )

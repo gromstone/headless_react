@@ -30,7 +30,8 @@ class HeaderHero extends Component {
     return (
       <div className="header-hero">
         <div { ...attributes } className={ classes }>
-          { (src && blog) ? <img className="hero--img" src={src} alt="hero img" /> : null}
+          { (src && blog) ? <img className="hero--img" src={src} alt="hero img" /> : null }
+          { this.props.children }
         </div>
       </div>
     );
