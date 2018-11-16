@@ -5,6 +5,7 @@ import { FlexContainer } from '../Components/FlexGrid';
 import { Navbar, NavBrand, NavToggle, NavbarUl, Navquery } from '../Components/NavElements';
 
 class Header extends Component {
+
   state = {
     collapsed: false
   }
@@ -13,18 +14,19 @@ class Header extends Component {
   clickHandler = this.clickHandler.bind(this);
 
   toggleHandler(){
-    //console.log(this.state.collapse);
     this.setState({
       collapsed: !this.state.collapsed
     })
   }
 
   clickHandler(){
-    //console.log(this.state.collapse);
     this.setState({
       collapsed: false
     })
   }
+
+  //<Collapse isOpen={this.state.collapsed} navbar aria-expanded={ this.state.collapsed ? true : false }> </Collapse>
+
 
   render(){
     const collapsed = this.state.collapsed;
@@ -32,19 +34,15 @@ class Header extends Component {
     return (
       <FlexContainer tag={'header'} className='header'>
         <Navbar>
-          <NavToggle style={{display: this.state.collapsed ? 'none' : 'block' }} onClick={this.toggleHandler}/>
-
           <NavBrand>
-            Logo
+            <img src="https://placeholder.pics/svg/64x64/FF7A37-FFA562/FFFFFF/logo%20small" alt="logo"/>
           </NavBrand>
-          <Collapse isOpen={this.state.collapsed} navbar aria-expanded={ this.state.collapsed ? true : false }>
-            <NavbarUl left>
-              <Navquery onClick={this.clickHandler}/>
-            </NavbarUl>
-          </Collapse>
+
+          <NavbarUl left>
+            <Navquery onClick={this.clickHandler}/>
+          </NavbarUl>
 
         </Navbar>
-        { collapsed }
       </FlexContainer>
     )
   }

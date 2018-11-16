@@ -49,7 +49,7 @@ import { Card, CardHeader, CardColorTop, CardImg, CardTitle, CardBody, CardConte
         </Col>
       </Row>
       <Row>
-        <Col auto />
+        <Col sm auto />
         <Col sm={4} >
           <Card blog>
             <CardImg top hover overlay={'white-gleam'} className={'img-fluid'} alt="tractor image" src="https://images.freeimages.com/images/large-previews/1ad/tractor-2-1386664.jpg" />
@@ -73,10 +73,10 @@ import { Card, CardHeader, CardColorTop, CardImg, CardTitle, CardBody, CardConte
             </CardBody>
           </Card>
         </Col>
-        <Col auto />
+        <Col sm auto />
       </Row>
       <Row>
-        <Col auto />
+        <Col sm auto />
         <Col sm={4} >
           <Card cascade reverse>
             <CardImg top hover overlay={'white-gleam'} className={'img-fluid'} alt="tractor image" src="https://images.freeimages.com/images/large-previews/1ad/tractor-2-1386664.jpg" />
@@ -98,10 +98,10 @@ import { Card, CardHeader, CardColorTop, CardImg, CardTitle, CardBody, CardConte
             </CardBody>
           </Card>
         </Col>
-        <Col auto />
+        <Col sm auto />
       </Row>
       <Row>
-        <Col auto />
+        <Col sm auto />
         <Col sm={6} >
           <Card review text={'secondary'} style={{ backgroundImage: "url('https://www.gstatic.com/webp/gallery/1.jpg')"}}>
             <CardBody className={'rgba-blue-bright'}>
@@ -121,10 +121,10 @@ import { Card, CardHeader, CardColorTop, CardImg, CardTitle, CardBody, CardConte
             </CardBody>
           </Card>
         </Col>
-        <Col auto />
+        <Col sm auto />
       </Row>
       <Row>
-        <Col auto />
+        <Col sm auto />
         <Col sm={4} >
           <Flipper flipped={boolean('flipped', false)}>
             <Card personal className="face front">
@@ -147,7 +147,7 @@ import { Card, CardHeader, CardColorTop, CardImg, CardTitle, CardBody, CardConte
             </Card>
           </Flipper>
         </Col>
-        <Col auto />
+        <Col sm auto />
       </Row>
     </FlexContainer>
   );

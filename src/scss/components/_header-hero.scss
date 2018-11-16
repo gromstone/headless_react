@@ -1,10 +1,6 @@
 .header-hero {
   display: block;
   width: 100%;
-
-  @media (min-width: $device--sm) {
-    margin-top: 42px;
-  }
 }
 
 .hero {

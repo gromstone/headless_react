@@ -11,7 +11,6 @@ storiesOf('Molecules/Navbar', module)
   .addDecorator(checkA11y)
   .add('Navigation list', () =>
       <Navbar >
-        <NavToggle />
         <NavbarUl left>
           <NavLi>
             <a className="nav__link btn--flat" href="/">Home</a>

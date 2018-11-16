@@ -28,7 +28,7 @@ class Link extends Component {
                     onClick={this.props.onClick}
                   >
                     <i className={(link === 'Home') ? 'fa fa-home' : (link === 'Blog') ? 'fa fa-commenting' : 'fa fa-envelope'}></i>
-                      { link }
+                    <span>{ link }</span>
                   </NavLink>
                 </NavLi>
               )) }

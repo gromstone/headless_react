@@ -1,16 +1,19 @@
 //devices
-$device--xs:               0;
+$device--xs:               26.5em; // 425px
 $device--sm:               34em; //540px
 $device--md:               48em; //768px
 $device--lg:               62em; //992px
 $device--xl:               75em; //1200px
+
+$grid-columns:             12 !default;
+$grid-gutter-width:        30px !default;
 
 //colors
 $color__primary:           #2891cb !default; //blue
 $color__secondary:         #ca6e29 !default; //orange
 $color__optional:          #276b53 !default; //green
 $color__success:           #00c851 !default; //green lime
-$color__default:           #444 !default;    //dark grey
+$color__default:           #444444 !default;    //dark grey
 $color__warning:           #ffbb33 !default; //yellow
 $color__red:               #C10000 !default;
 $color__anchor:            #0275d8 !default;
@@ -18,8 +21,8 @@ $color__anchor:            #0275d8 !default;
 $color__info:              #33b5e5 !default;
 $color__grey--std:         #585858 !default;
 $color__grey--bg:          #9d9d9d !default;
-$color__white:             #fff !default;
-$color__black:             #000 !default;
+$color__white:             #ffffff !default;
+$color__black:             #000000 !default;
 
 $color__primary--light:    #15a0ec !default;
 $color__secondary--light:  #ea6e11 !default;

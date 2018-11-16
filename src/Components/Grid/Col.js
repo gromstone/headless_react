@@ -31,12 +31,14 @@ class Col extends Component {
     } = this.props;
 
     const classes = classNames(
-      auto ? 'flex__col--auto' : '',
-      xs ? 'flex__col--xs-' + xs : '',
-      sm ? 'flex__col--sm-' + sm : '',
-      md ? 'flex__col--md-' + md : '',
-      lg ? 'flex__col--lg-' + lg : '',
-      xl ? 'flex__col--xl-' + xl : '',
+      'flex__col',
+      auto ? 'flex__col-auto' : '',
+      auto && xs ? 'flex__col-xs' : auto && sm ? 'flex__col-sm' : auto && md ? 'flex__col-md' : auto && lg ? 'flex__col-lg' : auto && xl ? 'flex__col-xl' : '',
+      !auto && xs ? 'flex__col-xs-' + xs : '',
+      !auto && sm ? 'flex__col-sm-' + sm : '',
+      !auto && md ? 'flex__col-md-' + md : '',
+      !auto && lg ? 'flex__col-lg-' + lg : '',
+      !auto && xl ? 'flex__col-xl-' + xl : '',
       className
     )
 

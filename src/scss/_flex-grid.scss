@@ -1,35 +1,14 @@
+
 .flex__container {
-  box-sizing: border-box;
-  margin: 0 auto;
-  padding: 0 1em;
-  width: calc(100vh / 1);
-
-  &-fluid {
-    width: 100%;
-  }
-
-  @media (min-width: $device--sm) {
-    max-width: $device--sm;
-  }
-
-  @media (min-width: $device--md) {
-    max-width: $device--md;
-  }
-
-  @media (min-width: $device--lg) {
-    max-width: $device--lg;
-  }
-
-  @media (min-width: $device--xl) {
-    max-width: $device--xl;
-  }
+  @include make-container();
+  @include make-container-max-widths();
 }
 
+.flex__container-fluid {
+  @include make-container();
+}
 .flex__row {
-  box-sizing: border-box;
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 1em;
+  @include make-row();
 
   &--align-evenly {
     justify-content: space-evenly;
@@ -55,49 +34,19 @@
     flex-direction: row-reverse;
   }
 }
+.flex__row+.flex__row {
+  margin-top: 1rem;
+}
 
-.flex__col {
-  box-sizing: border-box;
-  padding: 1em;
-  width: 100%;
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
 
-  &--auto {
-    margin: 10px;
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 0;
+  > .flex__col,
+  > [class*="flex__col-"] {
+    padding-right: 0;
+    padding-left: 0;
   }
 }
 
-@for $i from 1 through 12 {
-  .flex__col--sm-#{$i},
-  .flex__col--md-#{$i},
-  .flex__col--lg-#{$i},
-  .flex__col--xl-#{$i} {
-    @extend .flex__col;
-  }
-
-  .flex__col--xs-#{$i} {
-    @media (min-width: $device--sm) {
-      width: calc(100% * (#{$i} / 12));
-    }
-  }
-
-  .flex__col--sm-#{$i} {
-    @media (min-width: $device--md) {
-      width: calc(100% * (#{$i} / 12));
-    }
-  }
-
-  .flex__col--md-#{$i} {
-    @media (min-width: $device--lg) {
-      width: calc(100% * (#{$i} / 12));
-    }
-  }
-
-  .flex__col--lg-#{$i} {
-    @media (min-width: $device--xl) {
-      width: calc(100% * (#{$i} / 12));
-    }
-  }
-}
+@include make-grid-columns()

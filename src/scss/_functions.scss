@@ -1,3 +1,18 @@
+$grid-breakpoints: (
+  xs: $device--xs,
+  sm: $device--sm,
+  md: $device--md,
+  lg: $device--lg,
+  xl: $device--xl
+) !default;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+) !default;
+
 $colors: () !default;
 $colors: map-merge((
   "primary" :   $color__primary,

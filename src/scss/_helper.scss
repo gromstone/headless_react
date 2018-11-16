@@ -12,10 +12,17 @@
 
 .ml-auto {
   margin-left: auto!important;
+  @media (max-width: $device--sm) {
+    margin-left: 0!important;
+  }
+
 }
 
 .mr-auto {
   margin-right: auto!important;
+  @media (max-width: $device--sm) {
+    margin-right: 0!important;
+  }
 }
 
 .hr-underline {
