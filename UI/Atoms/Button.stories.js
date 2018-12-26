@@ -2,13 +2,10 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { select, text, boolean } from '@storybook/addon-knobs/react';
 import { action } from '@storybook/addon-actions';
-import { checkA11y } from '@storybook/addon-a11y';
-
 
 import Button from '../../src/Components/Button';
 
 storiesOf('Atom/Button', module)
-  .addDecorator(checkA11y)
   .add('Button w/knobs', () =>
     <Button
       active={boolean("Active", false)}
@@ -28,5 +25,6 @@ storiesOf('Atom/Button', module)
       block={boolean("Block", false)}
       onClick={action('clicked')}
       children={text("Label", 'Click')}
+      onClick={action('clicked')}
     />
   )

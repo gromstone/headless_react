@@ -8,7 +8,7 @@ import { FlexContainer, Row, Col } from '../../src/Components/FlexGrid';
 import Button from '../../src/Components/Button';
 
 import { Flipper } from '../../src/Components/StyleElements';
-import { Card, CardHeader, CardColorTop, CardImg, CardTitle, CardBody, CardContent, CardFooter } from '../../src/Components/CardElements';
+import { Card, CardHeader, CardColorTop, CardImg, CardTitle, CardBody, CardContent, CardFooter } from '../../src/Components/Card';
 
   storiesOf('Organism/Card', module)
   .add('Card', () =>

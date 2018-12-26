@@ -6,7 +6,7 @@ import gql from 'graphql-tag';
 import Aux from '../../hoc/aux';
 import { HeaderHero } from '../StyleElements';
 import { FlexContainer, Row, Col } from '../FlexGrid';
-import { Card, CardHeader, CardImg, CardTitle, CardBody, CardContent, CardFooter } from '../CardElements';
+import { Card, CardHeader, CardImg, CardTitle, CardBody, CardContent, CardFooter } from '../Card';
 import Button from '../Button';
 
 const POST_PER_PAGE = 4;

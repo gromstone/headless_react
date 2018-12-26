@@ -1,0 +1,23 @@
+body {
+  background-color: #fff;
+  margin-top: 0;
+}
+
+table {
+  border-spacing: 0 !important;
+  width: 100%;
+  font-size: 14px;
+}
+
+thead {
+  background-color: #dcdcdc;
+}
+
+th {
+  text-transform: capitalize !important;
+}
+
+th, td{
+  padding: .5rem !important;
+  white-space: normal!important;
+}

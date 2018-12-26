@@ -3,8 +3,8 @@ import React from 'react';
 import Aux from '../../hoc/aux';
 import { HeaderHero, Jumbotron } from '../StyleElements';
 import { Row, Col } from '../FlexGrid';
-import { CardBody } from '../CardElements';
-//import { Card, CardHeader, CardImg, CardTitle, CardBody, CardContent, CardFooter } from '../CardElements';
+import { CardBody } from '../Card';
+//import { Card, CardHeader, CardImg, CardTitle, CardBody, CardContent, CardFooter } from '../Card';
 
 // state = {
 //   flipped: false

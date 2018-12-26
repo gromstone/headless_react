@@ -36,7 +36,7 @@ $color__bgGrey--dark:      darker($color__grey--bg, 10%) !default;
 
 $color__danger:            $color__red--light;
 $color__error:             $color__red--dark;
-$color__inactive:          lighten($color__black, 40%) !default;
+$color__inactive:          rgba($color__black, .8) !default;
 
 //Font settings
 $font-family--all:         'Dosis', Helvetica, Arial, Sans-Serif;
@@ -75,6 +75,8 @@ $hr-margin-y:              2.5rem !default;
 $hr-heigth-x:              2px !default;
 
 $assets-loc:               '../assets/';
+
+$caret-width:              .3em !default;
 
 //buttons
 $btn-basic-color:          $color__white !default;

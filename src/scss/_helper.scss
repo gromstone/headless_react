@@ -15,7 +15,6 @@
   @media (max-width: $device--sm) {
     margin-left: 0!important;
   }
-
 }
 
 .mr-auto {
@@ -35,4 +34,8 @@
 .img-fluid, .video-fluid  {
   width: 100%;
   height: auto;
+}
+
+.ui-font-lg{
+  font-size: calc-rem(24)
 }

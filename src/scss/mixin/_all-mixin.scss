@@ -1,0 +1,181 @@
+@mixin font-style( $ffSize:false, $ffFamily:false, $ffColor:flase , $ffWeight:false ){
+  @if $ffFamily == dosis {
+    font-family: $font-family--all;
+  } @else if $ffFamily == rokkitt {
+    font-family: $font-family--special;
+  }
+
+  @if $ffSize { font-size: calc-rem($ffSize); }
+  @if $ffColor { color: $ffColor; }
+  @if $ffWeight { font-weight: $ffWeight; }
+
+  @media (min-width: $device--sm) {
+    line-height: calculate-line-height( $ffSize, $device--sm );
+  }
+  @media (max-width: $device--md) {
+    line-height: calculate-line-height( $ffSize, $device--md );
+  }
+  @media (max-width: $device--lg) {
+    line-height: calculate-line-height( $ffSize, $device--lg );
+  }
+  @media (max-width: $device--xl) {
+    line-height: calculate-line-height( $ffSize, $device--xl );
+  }
+
+};
+
+@mixin make-nav( $tcolor, $color, $color-1, $bgcolor) {
+  .navbar-nav {
+    .nav__item {
+      .nav__link {
+        &.disabled {
+          color: $tcolor;
+
+          &:hover {
+            color: $tcolor;
+          }
+        }
+      }
+    }
+  }
+  .navbar-nav {
+    .nav__item {
+      .nav__link {
+        color: $tcolor;
+        transition: $transition__basic;
+        &:hover {
+          color:$color-1;
+        }
+      }
+      &.active>.nav__link{
+        background-color: $bgcolor;
+        &:hover {
+          color: $color;
+        }
+      }
+    }
+  }
+  .navbar-nav {
+
+    .nav-link {
+      color: $color;
+      transition: $transition__hover;
+
+      &:hover {
+        color: $color-1
+      }
+    }
+    &.active>.nav-link {
+      background-color: $bgcolor;
+      &:hover {
+        color: $color;
+      }
+    }
+  }
+
+  padding: $padding-small-y $padding-small-x;
+};
+
+@mixin box-shadow($left, $top, $radius, $color) {
+	box-shadow: $left $top $radius $color;
+	-webkit-box-shadow: $left $top $radius $color;
+	-moz-box-shadow: $left $top $radius $color;
+};
+
+@mixin make-badge($name, $color){
+  .badge--#{$name} {
+    background-color: $color !important;
+    color: alter-set-text-color($color) !important;
+  }
+};
+
+@mixin btn-size($pd-x, $pd-y, $font-size) {
+  font-size: $font-size;
+  padding: $pd-y $pd-x;
+};
+
+@mixin make-button($name, $color){
+  .btn--#{$name} {
+    //Need it for hover effects
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    position: relative;
+
+    background-color: $color !important;
+    color: alter-set-text-color($color) !important;
+    font-family: $font-family--all;
+
+    &:before{
+      background: darken($color, 10%);
+      bottom: 0;
+      left: 0;
+      top: 0;
+      right: 0;
+      position: absolute;
+      z-index: -1;
+    }
+
+    &:hover{
+      background-color: lighten($color, 5%)!important;
+    }
+    &:focus {
+      box-shadow: $shadow-extra;
+    }
+    &:focus, &:active, &.active {
+      background-color: darken($color, 10%)!important;
+    }
+  }
+};
+
+@mixin make-button-outline($name, $color){
+  .btn-outline--#{$name} {
+    background-color: transparent !important;
+    border: 2px solid $color !important;
+    color: $color !important;
+    font-family: $font-family--all;
+
+    &:focus, &:active, &:active, &.active {
+      background-color: transparent !important;
+      border-color: $color !important;
+      color: $color !important;
+    }
+  }
+};
+
+@mixin make-float-button($fs, $h, $w){
+  height: $h;
+  width: $w;
+  i {
+    font-size: $fs;
+  }
+};
+
+
+@mixin make-hero($name, $color){
+  .hero--#{$name} {
+    background-color: $color !important;
+  }
+}
+
+
+/* Grow Shadow */
+@mixin grow-shadow {
+  transform: perspective(1px) translateZ(0);
+	transition-duration: .3s;
+	transition-property: "box-shadow, transform";
+
+	&:hover,
+	&:focus,
+	&:active {
+		box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+		transform: scale(1.1);
+	}
+}
+
+@mixin make-inactive {
+  color: $color__inactive;
+  cursor: not-allowed;
+  opacity: .5;
+  user-select: none;
+}

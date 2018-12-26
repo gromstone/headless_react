@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classname';
 
+import Icon from './Icon'
+
 class Button extends Component {
   state ={
     cursorPos:{}
@@ -12,7 +14,8 @@ class Button extends Component {
   static propTypes = {
     tag: PropTypes.string,
     active: PropTypes.bool,
-    size: PropTypes.oneOf(['xs','sm','md','lg','tb']),
+    size: PropTypes.oneOf(['xs','sm','md','lg','md']),
+    icon: PropTypes.string,
     className: PropTypes.string,
     color: PropTypes.string,
     gradient: PropTypes.string,
@@ -57,7 +60,7 @@ class Button extends Component {
   }
 
   render(){
-    let { tag: Tag, active, size, className, color, gradient, role, type, outline, rounded, circle, float, flat, block, social, action, innerRef, ...attributes } = this.props;
+    let { tag: Tag, active, size, icon, className, color, gradient, role, type, outline, rounded, circle, float, flat, block, social, action, innerRef, ...attributes } = this.props;
 
     const classes = classNames(
       size ? `btn--${size}` : false,
@@ -88,6 +91,7 @@ class Button extends Component {
         onTouchStart={ this.handleClick.bind(this) }
         { ...attributes }
       >
+        { icon && <Icon icon={'home'}/> }
         { this.props.children }
       </Tag>
     )

@@ -4,7 +4,7 @@ import Recaptcha from 'react-recaptcha';
 import Aux from '../../hoc/aux';
 import { HeaderHero, Flipper } from '../StyleElements';
 import { Row, Col } from '../FlexGrid';
-import { Card, CardHeader, CardImg, CardTitle, CardBody, CardContent, CardFooter } from '../CardElements';
+import { Card, CardHeader, CardImg, CardTitle, CardBody, CardContent, CardFooter } from '../Card';
 
 class Contact extends Component {
   state = {

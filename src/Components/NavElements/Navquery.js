@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 
-import { NavLi, NavLink } from '../NavElements';
+import { NavLi, NavLink } from '../Nav';
 import Aux from '../../hoc/aux';
 
 class Link extends Component {

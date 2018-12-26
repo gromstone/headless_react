@@ -3,7 +3,7 @@ import { Router, Switch, Route } from "react-router-dom";
 import { storiesOf } from '@storybook/react';
 
 import { FlexContainer, Row } from '../../src/Components/FlexGrid';
-import { Navbar, NavBrand, NavToggle, NavbarUl, NavLi } from '../../src/Components/NavElements';
+import { Navbar, NavBrand, NavToggle, NavbarUl, NavLi } from '../../src/Components/Nav';
 import { HeaderHero, Collapse } from '../../src/Components/StyleElements';
 
 storiesOf('Environment/Masthead', module)

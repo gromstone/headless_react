@@ -1,0 +1,187 @@
+.dropup, .dropright, .dropdown, .dropleft {
+  position: relative;
+}
+
+.dropdown-toggle {
+  @include caret;
+
+  &:hover, &:focus {
+    background-color: rgba($color__grey--std, .2);
+
+    &:before {
+      background: transparent;
+    }
+  }
+}
+
+// The dropdown menu
+.dropdown-menu {
+  background-color: $color__white;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: .25rem;
+  color: $color__grey--std;
+  display: none;
+  float: left;
+  font-size: calc-rem(16);
+  left: 0;
+  list-style: none;
+  margin: .125rem 0 0;
+  min-width: 10rem;
+  padding: .5rem 0;
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  z-index: 1000;
+  @include box-shadow( 0, .5rem, 1rem, rgba($color__black, .175) );
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .dropdown-menu#{$infix}-right {
+      left: auto;
+      right: 0;
+    }
+  }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .dropdown-menu#{$infix}-left {
+      left: 0;
+      right: auto;
+    }
+  }
+}
+
+.dropup {
+  .dropdown-menu {
+    bottom: 100%;
+    margin-top: 0;
+    margin-bottom: .125rem;
+    top: auto;
+  }
+
+  .dropdown-toggle {
+    @include caret(up);
+  }
+}
+
+.dropright {
+  .dropdown-menu {
+    left: 100%;
+    margin-top: 0;
+    margin-left: .125rem;
+    right: auto;
+    top: 0;
+  }
+
+  .dropdown-toggle {
+    @include caret(right);
+    &::after {
+      vertical-align: 0;
+    }
+  }
+}
+
+.dropleft {
+  .dropdown-menu {
+    left: auto;
+    margin-top: 0;
+    margin-right: .125rem;
+    right: 100%;
+    top: 0;
+  }
+
+  .dropdown-toggle {
+    @include caret(left);
+    &::before {
+      vertical-align: 0;
+    }
+  }
+}
+
+.dropdown-menu {
+  &[x-placement^="top"],
+  &[x-placement^="right"],
+  &[x-placement^="bottom"],
+  &[x-placement^="left"] {
+    bottom: auto;
+    right: auto;
+  }
+}
+
+.dropdown-divider {
+  border-top: 1px solid #e9ecef;
+  height: 0;
+  margin: .5rem 0;
+  overflow: hidden;
+}
+
+.dropdown-item {
+  background-color: transparent;
+  border: 0;
+  clear: both;
+  color: $color__grey--std;
+  display: block;
+  font-weight: normal;
+  padding: .25rem 1.5rem;
+  text-align: inherit;
+  white-space: nowrap; // prevent links from randomly breaking onto new lines
+  width: 100%;
+
+  &:first-child {
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+  }
+
+  &:last-child {
+    border-bottom-right-radius: calc(.25rem - 1px);
+    border-bottom-left-radius: calc(.25rem - 1px);
+  }
+
+  &:hover, &:focus {
+    background-color: $color__primary--light;
+    color: $color__white;
+    text-decoration: none;
+  }
+
+  &.active,
+  &:active {
+    background-color: $color__primary;
+    color: $color__white;
+    text-decoration: none;
+  }
+
+  &.disabled,
+  &:disabled {
+    background-color: transparent;
+    color: $color__inactive;
+    pointer-events: none;
+    opacity: .5;
+  }
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-header {
+  color: #6c757d;
+  display: block;
+  font-size: calc-rem(18);
+  margin-bottom: 0; // for use with heading elements
+  padding: .5rem 1.5rem;;
+  white-space: nowrap; // as with > li > a
+}
+
+// Dropdown text
+.dropdown-item-text {
+  color: #212529;
+  display: block;
+  padding: .25rem 1.5rem;
+}

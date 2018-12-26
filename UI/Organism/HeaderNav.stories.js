@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { select, text, boolean, number } from '@storybook/addon-knobs/react';
 import { action } from '@storybook/addon-actions';
 
-import { Navbar, NavBrand, NavToggle, NavbarUl, NavLi } from '../../src/Components/NavElements';
+import { Navbar, NavBrand, NavToggle, NavbarUl, NavLi } from '../../src/Components/Nav';
 
 storiesOf('Organism/Navigation', module)
   .add('Navigation', () =>

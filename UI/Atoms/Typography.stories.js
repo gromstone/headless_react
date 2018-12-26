@@ -2,41 +2,39 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text } from '@storybook/addon-knobs/react';
 import { action } from '@storybook/addon-actions';
-import { checkA11y } from '@storybook/addon-a11y';
 
 import { FlexContainer, Row, Col } from '../../src/Components/FlexGrid';
 
 storiesOf('Atom/Typography', module)
-  .addDecorator(checkA11y)
   .add('Font Family', () =>
-  <FlexContainer style={{textAlign:"center"}}>
+  <FlexContainer fluid style={{textAlign:"center"}}>
     <h2>Font Family</h2>
-    <h3>Dosis</h3>
+
     <Row>
-      <Col sm={4}> </Col>
-      <Col sm={4} style={{borderTop:"1px solid #d8d8d8"}}>
-        <p style={{fontFamily:"Dosis"}}>Dosis Regular - 400</p>
-        <p style={{fontFamily:"Dosis"}}>Body copy, standard size font (Set 16px base)</p>
+      <Col auto sm> </Col>
+      <Col sm={6} style={{borderTop:"1px solid #d8d8d8"}}>
+        <p className="ui-font-lg" style={{fontFamily:"Dosis"}}>Dosis Regular - 400</p>
+        <p className="lg-copy" style={{fontFamily:"Dosis"}}>Body copy, standard size font (Set 16px base)</p>
       </Col>
-      <Col sm={4}> </Col>
+      <Col auto sm> </Col>
     </Row>
-    <h3>Dosis Bold</h3>
+
     <Row>
-      <Col sm={4}> </Col>
-      <Col sm={4} style={{borderTop:"1px solid #d8d8d8"}}>
-        <p style={{fontFamily:"Dosis", fontWeight:"700"}}>Dosis SemiBold - 700</p>
-        <p style={{fontFamily:"Dosis", fontWeight:"700"}}>For important text and highlights</p>
+      <Col auto sm> </Col>
+      <Col sm={6} style={{borderTop:"1px solid #d8d8d8"}}>
+        <p className="ui-font-lg" style={{fontFamily:"Dosis", fontWeight:"700"}}>Dosis SemiBold - 700</p>
+        <p className="lg-copy" style={{fontFamily:"Dosis", fontWeight:"700"}}>For important text and highlights</p>
       </Col>
-      <Col sm={4}> </Col>
+      <Col auto sm> </Col>
     </Row>
-    <h3>Rokkitt</h3>
+
     <Row>
-      <Col sm={4}> </Col>
+      <Col auto sm> </Col>
       <Col sm={4} style={{borderTop:"1px solid #d8d8d8"}}>
-        <p style={{fontFamily:"Rokkitt"}}>Rokkitt - 400</p>
-        <h2 style={{fontFamily:"Rokkitt"}}>For Titles, headlines and big size fonts</h2>
+        <p className="ui-font-lg" style={{fontFamily:"Rokkitt"}}>Rokkitt - 400</p>
+        <p className="lg-copy" style={{fontFamily:"Rokkitt"}}>For Titles, headlines and big size fonts</p>
       </Col>
-      <Col sm={4}> </Col>
+      <Col auto sm> </Col>
     </Row>
   </FlexContainer>
 )
@@ -115,16 +113,16 @@ storiesOf('Atom/Typography', module)
           <h3>Small copy</h3>
           <p className='sm-copy' style={{fontFamily:"Dosis"}}>Readers of Wonkblog are also followers of the news. What separates Wonkblog from a news product is that it gives analysis of the stories that make the news. For instance, when the Syrian people had their internet shut down, instead of just reporting the news, Wonkblog asked an interesting question. As another example, around Thanksgiving time the Wonkblog had a fact-filled piece about why turkeys are getting fatter.</p>
         </Col>
-        <Row>
-          <Col sm={6} style={{borderTop:"1px solid #d8d8d8",backgroundColor:"#585858"}}>
-            <h3 style={{color:"white"}}>Rokkitt Standard copy</h3>
-            <p style={{fontFamily:"Rokkitt",color:"white"}}>Don’t get into the habit of thinking that if you update it a few times a day, you’ll grow your traffic. Yes, more blog posts means more sharing. But if you rush to push articles out, quality may suffer. If quality suffers, posts won’t get shared and you’ll lose readers. Tread carefully. Quality above all!</p>
-          </Col>
-          <Col sm={6} style={{borderTop:"1px solid #d8d8d8",backgroundColor:"#585858"}}>
-            <h3 style={{color:"white"}}>Dosis Standard copy</h3>
-            <p style={{fontFamily:"Dosis",color:"white"}}>Readers of Wonkblog are also followers of the news. What separates Wonkblog from a news product is that it gives analysis of the stories that make the news. For instance, when the Syrian people had their internet shut down, instead of just reporting the news, Wonkblog asked an interesting question. As another example, around Thanksgiving time the Wonkblog had a fact-filled piece about why turkeys are getting fatter.</p>
-          </Col>
-        </Row>
+      </Row>
+      <Row>
+        <Col sm={6} style={{borderTop:"1px solid #d8d8d8",backgroundColor:"#585858"}}>
+          <h3 style={{color:"white"}}>Rokkitt Standard copy</h3>
+          <p style={{fontFamily:"Rokkitt",color:"white"}}>Don’t get into the habit of thinking that if you update it a few times a day, you’ll grow your traffic. Yes, more blog posts means more sharing. But if you rush to push articles out, quality may suffer. If quality suffers, posts won’t get shared and you’ll lose readers. Tread carefully. Quality above all!</p>
+        </Col>
+        <Col sm={6} style={{borderTop:"1px solid #d8d8d8",backgroundColor:"#585858"}}>
+          <h3 style={{color:"white"}}>Dosis Standard copy</h3>
+          <p style={{fontFamily:"Dosis",color:"white"}}>Readers of Wonkblog are also followers of the news. What separates Wonkblog from a news product is that it gives analysis of the stories that make the news. For instance, when the Syrian people had their internet shut down, instead of just reporting the news, Wonkblog asked an interesting question. As another example, around Thanksgiving time the Wonkblog had a fact-filled piece about why turkeys are getting fatter.</p>
+        </Col>
       </Row>
     </FlexContainer>
     )

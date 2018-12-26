@@ -1,11 +1,15 @@
+import React from 'react'
 import { configure } from '@storybook/react';
 import { setAddon, addDecorator } from '@storybook/react';
-import { withInfo , setDefaults } from '@storybook/addon-info';
+import { checkA11y } from '@storybook/addon-a11y';
 import { withKnobs } from '@storybook/addon-knobs';
+import { withInfo } from '@storybook/addon-info';
 import { setOptions } from '@storybook/addon-options';
 import JSXAddon from 'storybook-addon-jsx';
 
-const req = require.context('../UI', true, /stories\.js$/);
+import './book.css'
+
+const storyWrap = story => <div style={{margin: 20}}>{story()}</div>
 
 setOptions({
     name: 'Atom design',
@@ -16,22 +20,18 @@ setOptions({
     sortStoriesByKind: true
 });
 
-setDefaults({
-    source: true,
-    styles: stylesheet => {
-        stylesheet.infoBody = {
-            infoBody: {
-                padding: '10px'
-            }
-        };
-        return stylesheet;
-    },
-    maxPropsIntoLine: 1
-});
-addDecorator( (story, context) => withInfo(context.kind)(story)(context) );
+addDecorator( (story, context) => withInfo( {
+  inline:true,
+  header:false,
+  source:true,
+  maxPropsIntoLine: 1
+}, context.kind)(story)(context) );
+addDecorator(checkA11y)
+addDecorator(storyWrap);
 addDecorator(withKnobs);
 setAddon(JSXAddon)
 
+const req = require.context('../UI', true, /stories\.js$/);
 function loadStories() {
   require('./welcomeStory')
   req.keys().forEach(req);

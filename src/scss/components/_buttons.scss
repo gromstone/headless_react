@@ -34,7 +34,7 @@
 
   &:disabled, &.disabled {
     pointer-events: none;
-    opacity: .65;
+    opacity: .5;
   }
 
   &--sm{
@@ -47,10 +47,6 @@
 
   &--lg{
     @include btn-size($btn-lg-padding-x, $btn-lg-padding-y, $btn-lg-font);
-  }
-
-  &--tb{
-    padding: $btn-tb-padding-y $btn-tb-padding-x;
   }
 
   i {

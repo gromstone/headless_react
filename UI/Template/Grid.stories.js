@@ -10,20 +10,20 @@ storiesOf('Template/Grid', module)
   <FlexContainer style={{textAlign:"center"}}>
     <h3>Flex Grid</h3>
     <Row>
-      <Col sm={4} className={''} style={{border:"1px solid #d8d8d8"}}> Col 1 'sm-4'</Col>
-      <Col sm={4} className={''} style={{border:"1px solid #d8d8d8"}}> Col 2 'sm-4'</Col>
-      <Col sm={4} className={''} style={{border:"1px solid #d8d8d8"}}> Col 3 'sm-4'</Col>
+      <Col sm={2} md={3} lg={5} style={{border:"1px solid #d8d8d8"}}> Col 1 'sm-4'</Col>
+      <Col sm={2} md={2} lg={3} style={{border:"1px solid #d8d8d8"}}> Col 2 'sm-4'</Col>
+      <Col sm={8} md={7} lg={4} style={{border:"1px solid #d8d8d8"}}> Col 3 'sm-4'</Col>
     </Row>
     <Row>
-      <Col sm={3} className={''} style={{border:"1px solid #d8d8d8"}}> Col 1 'sm-3'</Col>
-      <Col sm={3} className={''} style={{border:"1px solid #d8d8d8"}}> Col 2 'sm-3'</Col>
-      <Col sm={3} className={''} style={{border:"1px solid #d8d8d8"}}> Col 3 'sm-3'</Col>
-      <Col sm={3} className={''} style={{border:"1px solid #d8d8d8"}}> Col 4 'sm-3'</Col>
+      <Col sm={3} style={{border:"1px solid #d8d8d8"}}> Col 1 'sm-3'</Col>
+      <Col sm={3} style={{border:"1px solid #d8d8d8"}}> Col 2 'sm-3'</Col>
+      <Col sm={3} style={{border:"1px solid #d8d8d8"}}> Col 3 'sm-3'</Col>
+      <Col sm={3} style={{border:"1px solid #d8d8d8"}}> Col 4 'sm-3'</Col>
     </Row>
     <Row>
-      <Col sm={5} className={''} style={{border:"1px solid #d8d8d8"}}> Col 1 'sm-5'</Col>
-      <Col sm={2} className={''} style={{border:"1px solid #d8d8d8"}}> Col 2 'sm-2'</Col>
-      <Col sm={5} className={''} style={{border:"1px solid #d8d8d8"}}> Col 3 'sm-5'</Col>
+      <Col sm={5} style={{border:"1px solid #d8d8d8"}}> Col 1 'sm-5'</Col>
+      <Col sm={2} style={{border:"1px solid #d8d8d8"}}> Col 2 'sm-2'</Col>
+      <Col sm={5} style={{border:"1px solid #d8d8d8"}}> Col 3 'sm-5'</Col>
     </Row>
     <Row>
       <Col sm={1} style={{padding: '5px 0', border: "1px solid #d8d8d8"}}> Col 1 'sm-1'</Col>
@@ -46,9 +46,9 @@ storiesOf('Template/Grid', module)
       <Col sm auto style={{border:"1px solid #d8d8d8",}}> Auto Col 3 'sm'</Col>
     </Row>
     <Row>
-      <Col sm={3} className={''} style={{border:"1px solid #d8d8d8"}}> Col 1 'sm-3'</Col>
-      <Col auto sm className={''} style={{border:"1px solid #d8d8d8"}}> Col Auto 'sm'</Col>
-      <Col sm={6} className={''} style={{border:"1px solid #d8d8d8"}}> Col 3 'sm-6'</Col>
+      <Col sm={3} style={{border:"1px solid #d8d8d8"}}> Col 1 'sm-3'</Col>
+      <Col auto sm style={{border:"1px solid #d8d8d8"}}> Col Auto 'sm'</Col>
+      <Col sm={6} style={{border:"1px solid #d8d8d8"}}> Col 3 'sm-6'</Col>
     </Row>
     <Row>
       <Col sm auto style={{border:"1px solid #d8d8d8",}}> Auto Col 1 'sm'</Col>
